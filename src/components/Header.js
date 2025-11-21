@@ -11,7 +11,7 @@ export default function Header() {
             <p className="text-xs text-gray-500">Building Africa's Future</p>
           </div>
         </div>
-        <nav className="space-x-4 text-blue-900 text-sm">
+        <nav className="space-x-4 text-blue-900 text-sm flex flex-col lg:flex-row">
           <Link href="/" className="hover:underline">Home</Link>
           <Link href="/about" className="hover:underline">About</Link>
           <Link href="/companies" className="hover:underline">Our Companies</Link>
