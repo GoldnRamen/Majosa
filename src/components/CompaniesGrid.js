@@ -11,7 +11,7 @@ export default function CompaniesGrid(){
   return (
     <section id="companies" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       {companies.map(c => (
-        <div key={c.id} className="p-4 border rounded-lg shadow-sm bg-white">
+        <div key={c.id} className="p-4 border rounded-lg shadow-sm bg-linear-to-br from-gray-300 to-white">
           <div className="h-12 w-12 bg-gray-700 rounded flex items-center justify-center font-semibold">{c.name.split(' ')[1]?.slice(0,2) || 'MG'}</div>
           <h3 className="mt-3 text-gray-700 font-semibold">{c.name}</h3>
           <p className="text-sm mt-2 text-gray-600">{c.desc}</p>
