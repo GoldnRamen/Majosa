@@ -22,10 +22,10 @@ export default function Home(){
           <section id="sectors" className="space-y-4">
             <h3 className="text-xl font-semibold">Sectors We Serve</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <div className="p-12 border rounded relative" style={{backgroundImage: "url('/images/machine-3037670_1280.jpg')", backgroundRepeat: "no-repeat", backgroundSize: "cover"}}><h4 className="bg-gray-800 rounded w-fit top-0 right-1 p-1 absolute">Mining</h4></div>
-              <div className="p-12 border rounded relative" style={{backgroundImage: "url('/images/dji-4223417_1280.jpg')", backgroundRepeat: "no-repeat", backgroundSize: "cover"}}><h4 className="bg-gray-800 rounded w-fit top-0 right-1 p-1 absolute">Agriculture</h4></div>
-              <div className="p-12 border rounded relative" style={{backgroundImage: "url('/images/construction-site-2733678_1280.jpg')", backgroundRepeat: "no-repeat", backgroundSize: "cover"}}><h4 className="bg-gray-800 rounded w-fit top-0 right-1 p-1 absolute">Construction</h4></div>
-              <div className="p-12 border rounded relative" style={{backgroundImage: "url('/images/supermarket-4052658_1280.jpg')", backgroundRepeat: "no-repeat", backgroundSize: "cover"}}><h4 className="bg-gray-800 rounded w-fit top-0 right-1 p-1 absolute">Retail</h4></div>              
+              <div className="p-12 border rounded relative" style={{backgroundImage: "url('images/machine-3037670_1280.jpg')", backgroundRepeat: "no-repeat", backgroundSize: "cover"}}><h4 className="bg-gray-800 rounded w-fit top-0 right-1 p-1 absolute">Mining</h4></div>
+              <div className="p-12 border rounded relative" style={{backgroundImage: "url('images/dji-4223417_1280.jpg')", backgroundRepeat: "no-repeat", backgroundSize: "cover"}}><h4 className="bg-gray-800 rounded w-fit top-0 right-1 p-1 absolute">Agriculture</h4></div>
+              <div className="p-12 border rounded relative" style={{backgroundImage: "url('images/construction-site-2733678_1280.jpg')", backgroundRepeat: "no-repeat", backgroundSize: "cover"}}><h4 className="bg-gray-800 rounded w-fit top-0 right-1 p-1 absolute">Construction</h4></div>
+              <div className="p-12 border rounded relative" style={{backgroundImage: "url('images/supermarket-4052658_1280.jpg')", backgroundRepeat: "no-repeat", backgroundSize: "cover"}}><h4 className="bg-gray-800 rounded w-fit top-0 right-1 p-1 absolute">Retail</h4></div>              
             </div>
           </section>
 
