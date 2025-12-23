@@ -7,10 +7,10 @@ import { useRouter } from "next/router"
 
 export default function Home(){
   const sectors = [
-  {id: 'mine', name: 'Mining', img: "images/machine-3037670_1280.jpg"},
-  {id: 'agric', name: 'Agriculture', img: "images/dji-4223417_1280.jpg"},
-  {id: 'construct', name: 'Construction', img: "images/construction-site-2733678_1280.jpg"},
-  {id: 'retail', name: 'Retail', img: "images/supermarket-4052658_1280.jpg"}
+  {id: 'mine', name: 'Mining', img: "/images/machine-3037670_1280.jpg"},
+  {id: 'agric', name: 'Agriculture', img: "/images/dji-4223417_1280.jpg"},
+  {id: 'construct', name: 'Construction', img: "/images/construction-site-2733678_1280.jpg"},
+  {id: 'retail', name: 'Retail', img: "/images/supermarket-4052658_1280.jpg"}
 ]
 
   return (

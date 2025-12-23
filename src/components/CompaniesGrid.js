@@ -1,10 +1,10 @@
 import Link from 'next/link'
 
 const companies = [
-  {id: 'geo', name: 'Majosa Geotechnical Investment Ltd', desc: 'Exploration, Mining, Borehole Drilling, Geotechnical Engineering, and Mineral Export.', img: "images/28d7e9a1-c9ef-4340-8610-6db1b7f9fdd9.png"},
-  {id: 'agro', name: 'Majosa Agrochemical Limited', desc: 'Rice processing, fertilizer & agrochemical services, mechanized farming.', img: "images/d0d2e546-da2c-473b-b2c3-228b659b153c.png"},
-  {id: 'global', name: 'Majosa Global Services Nig. Ltd', desc: 'Construction, Oil & Gas, Real Estate and general services.', img: "images/f9018f9c-ac22-470c-8aff-0ff288defde1.png"},
-  {id: 'enterprise', name: 'Majosa Enterprise', desc: 'Retail supermarket and general merchandise.', img: "images/0b6f32ef-3f41-4996-b1d7-0d90d3273968.png"}
+  {id: 'geo', name: 'Majosa Geotechnical Investment Ltd', desc: 'Exploration, Mining, Borehole Drilling, Geotechnical Engineering, and Mineral Export.', img: "/images/28d7e9a1-c9ef-4340-8610-6db1b7f9fdd9.png"},
+  {id: 'agro', name: 'Majosa Agrochemical Limited', desc: 'Rice processing, fertilizer & agrochemical services, mechanized farming.', img: "/images/d0d2e546-da2c-473b-b2c3-228b659b153c.png"},
+  {id: 'global', name: 'Majosa Global Services Nig. Ltd', desc: 'Construction, Oil & Gas, Real Estate and general services.', img: "/images/f9018f9c-ac22-470c-8aff-0ff288defde1.png"},
+  {id: 'enterprise', name: 'Majosa Enterprise', desc: 'Retail supermarket and general merchandise.', img: "/images/0b6f32ef-3f41-4996-b1d7-0d90d3273968.png"}
 ]
 
 export default function CompaniesGrid(){
