@@ -1,5 +1,6 @@
 import Header from "@/components/Header"
 import Image from "next/image"
+import { CldImage } from "next-cloudinary"
 import Footer from '@/components/Footer'
 import Hero from '@/components/Hero'
 import CompaniesGrid from '@/components/CompaniesGrid'
@@ -8,10 +9,10 @@ import { useRouter } from "next/router"
 
 export default function Home(){
   const sectors = [
-  {id: 'mine', name: 'Mining', img: "/images/machine-3037670_1280.jpg"},
-  {id: 'agric', name: 'Agriculture', img: "/images/dji-4223417_1280.jpg"},
-  {id: 'construct', name: 'Construction', img: "/images/construction-site-2733678_1280.jpg"},
-  {id: 'retail', name: 'Retail', img: "/images/supermarket-4052658_1280.jpg"}
+  {id: 'mine', name: 'Mining', img: "machine-3037670_1280_uc2lzq"},
+  {id: 'agric', name: 'Agriculture', img: "dji-4223417_1280_uiglsz"},
+  {id: 'construct', name: 'Construction', img: "construction-site-2733678_1280_n93czx"},
+  {id: 'retail', name: 'Retail', img: "supermarket-4052658_1280_fuvhgf"}
 ]
 
   return (
@@ -31,7 +32,9 @@ export default function Home(){
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {sectors.map(s => (                
                 <div key={s.id} className="group relative overflow-hidden rounded-2xl bg-transparent shadow-md transition-all duration-500 hover:-translate-y-2 hover:shadow-xl">
-                  <div className="relative h-48 w-full"><Image src={`${s.img}`} fill className="object-cover transition-transform duration-500 group-hover:scale-110" /></div>
+                  <div className="relative h-48 w-full">
+                    <CldImage src={s.img} crop={"fill"} fill sizes="100vw" className="object-cover transition-transform duration-500 group-hover:scale-110" />
+                  </div>
                   <div className="p-4">
                     <h3 className="text-lg font-semibold text-white">{s.name}</h3>
                   </div>
