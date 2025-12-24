@@ -12,13 +12,14 @@ export default function CompaniesGrid(){
   return (
     <section id="companies" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       {companies.map(c => (
-        <div className="group relative overflow-hidden rounded-2xl">
+        <div key={c.id} className="group relative overflow-hidden rounded-2xl">
           <div className='h-64 w-full'>
             <CldImage
               src={c.img}
               fill
               sizes='100vw'
               className="object-cover transition-transform duration-700 group-hover:scale-105"
+              alt='Picture not found'
             />
             <div className="absolute z-10 top-2 left-2 h-12 w-12 bg-gray-700 rounded flex items-center justify-center font-semibold">{c.name.split(' ')[1]?.slice(0,2) || 'MG'}</div>
             <div className="absolute z-10 top-20 left-10 right-5 h-fit w-fit p-2 justify-center font-semibold backdrop-blur-md bg-black/20 rounded">{c.name}</div>
