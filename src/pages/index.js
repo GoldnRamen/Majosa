@@ -1,4 +1,5 @@
 import Header from "@/components/Header"
+import Image from "next/image"
 import Footer from '@/components/Footer'
 import Hero from '@/components/Hero'
 import CompaniesGrid from '@/components/CompaniesGrid'
@@ -30,7 +31,7 @@ export default function Home(){
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {sectors.map(s => (                
                 <div key={s.id} className="group relative overflow-hidden rounded-2xl bg-transparent shadow-md transition-all duration-500 hover:-translate-y-2 hover:shadow-xl">
-                  <Image src={`${s.img}`} className="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                  <div className="relative h-48 w-full"><Image src={`${s.img}`} fill className="object-cover transition-transform duration-500 group-hover:scale-110" /></div>
                   <div className="p-4">
                     <h3 className="text-lg font-semibold text-white">{s.name}</h3>
                   </div>
