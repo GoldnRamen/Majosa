@@ -29,7 +29,7 @@ export default function CompaniesGrid(){
               <div className="absolute z-10 top-2 left-2 h-12 w-12 bg-gray-700 rounded flex items-center justify-center font-semibold text-white">{c.name.split(' ')[1]?.slice(0,2) || 'MG'}</div>
               <div className="absolute z-10 top-20 left-10 right-5 h-fit w-fit p-2 justify-center font-semibold backdrop-blur-md bg-black/20 rounded text-white">{c.name}</div>
             </div>
-            <div className="absolute inset-x-0 bottom-0 translate-y-full group-hover:translate-y-0 transition-all duration-500 backdrop-blur-md bg-white/20 p-4">
+            <div className="absolute inset-x-0 lg:bottom-0 bottom-20 translate-y-full  lg:group-hover:translate-y-0 transition-all duration-500 backdrop-blur-md bg-white/20 p-4">
               <h3 className="text-white font-semibold">Explore More</h3>
               <p className="text-cyan-800" onClick={() => setSelectedId(c.id)}>Learn More →</p>
             </div>

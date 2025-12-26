@@ -36,12 +36,12 @@ export default function Header() {
       {headerDropDown && (
         <div className="fixed lg:hidden right-0 left-1 top-20 z-30 bg-linear-to-br from-cyan-900 to-blue-100 bottom-1 p-10 border rounded-l-xl">
           <nav className="space-y-10 text-white text-lg flex flex-col" onClick={toggleMenu}>
-            <Link href="/" className="smallNav max-w-fit">Home</Link>
-            <Link href="/about" className="smallNav max-w-fit">About</Link>
-            <Link href="/companies" className="smallNav max-w-fit">Our Companies</Link>
-            <Link href="/services" className="smallNav max-w-fit">Services</Link>
-            <Link href="/leadership" className="smallNav max-w-fit">Leadership</Link>
-            <Link href="/contact" className="smallNav max-w-fit">Contact</Link>
+            <Link href="/" className="smallNav max-w-full">Home</Link>
+            <Link href="/about" className="smallNav max-w-full">About</Link>
+            <Link href="/companies" className="smallNav max-w-full">Our Companies</Link>
+            <Link href="/services" className="smallNav max-w-full">Services</Link>
+            <Link href="/leadership" className="smallNav max-w-full">Leadership</Link>
+            <Link href="/contact" className="smallNav max-w-full">Contact</Link>
           </nav>   
       </div>
       )}

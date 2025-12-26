@@ -6,7 +6,7 @@ export default function Companies(){
   return (
     <div className="mt-15 min-h-screen bg-linear-to-br from-cyan-900 to-blue-100 flex flex-col">
       <Header />
-      <main className="flex-1 max-w-full mx-20 px-6 py-12 space-y-8">
+      <main className="flex-1 max-w-full lg:mx-20 px-6 py-12 space-y-8">
         <h1 className="text-3xl font-bold">Our Companies</h1>
         <p className="text-white">
           Majosa Group is headquartered in Abuja, Nigeria, and operates through four strong subsidiaries.
