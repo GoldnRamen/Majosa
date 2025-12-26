@@ -34,7 +34,7 @@ export default function About(){
     <div className="min-h-screen mt-15 bg-linear-to-br from-cyan-900 to-blue-100 flex flex-col">
       <Header />
       <main className="flex-1 py-12 space-y-10">
-        <h1 className="text-3xl font-bold p-3 text-center">Who We Are</h1>
+        <h1 className="text-3xl font-bold p-3 text-white text-center">Who We Are</h1>
         <div className="w-full grid grid-cols-4 h-[80vh] relative overflow-hidden" style={{backgroundImage: 'url("https://imagine-public.x.ai/imagine-public/images/1fab00e1-5785-42db-a02f-48883647c1e2.png?cache=1")', backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundPosition: "center" }}>
           
         </div>

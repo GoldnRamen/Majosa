@@ -3,7 +3,7 @@ import Footer from '../components/Footer'
 
 export default function Leadership(){
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="mt-15 min-h-screen flex flex-col">
       <Header />
       <main className="flex-1 max-w-4xl mx-auto px-6 py-12">
         <h1 className="text-3xl font-bold">Leadership</h1>
