@@ -1,7 +1,6 @@
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import CompaniesGrid from '../components/CompaniesGrid'
-import { CldImage } from 'next-cloudinary'
 
 export default function Companies(){
   return (
