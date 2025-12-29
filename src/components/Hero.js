@@ -65,14 +65,14 @@ export default function Hero(){
         <div className="absolute inset-0 flex flex-col items-center justify-center text-left text-white px-4">
           <div className="mx-auto px-6 py-32 flex-1 relative md:flex-row items-center gap-8">
             <div className="absolute inset-0 bg-gray-600 h-[50vh] top-30 opacity-70 z-0 rounded-lg"></div>
-            <div className="relative z-20">
-              <h2 className="text-xl lg:text-5xl md:text-3xl font-bold leading-tight">Building Africa’s Future Through Innovation and Sustainable Growth</h2>
+            <div className="relative z-20 mt-10 md:mt-0 lg:mt-0">
+              <h2 className="text-2xl lg:text-5xl md:text-3xl font-bold leading-tight">Building Africa’s Future Through Innovation and Sustainable Growth</h2>
               <p className="mt-4 text-sm md:text-lg max-w-xl">Majosa Group is a diversified African conglomerate with expertise spanning energy, agriculture, construction, mining, and retail.</p>
               <div className="mt-6 flex gap-3 md:text-lg text-xs">
-                <Link href="/companies" className="md:px-5 md:py-3 p-2 max-w-fit bg-white text-blue-700 rounded-md font-semibold">
+                <Link href="/companies" className="md:px-5 md:py-3 p-3 max-w-fit bg-white text-blue-700 rounded-md font-semibold">
                   Explore Our Companies
                 </Link>
-                <a href="/contact" className="md:px-5 md:py-3 p-2 max-w-fit border border-white rounded-md">
+                <a href="/contact" className="md:px-5 md:py-3 p-3 max-w-fit border border-white rounded-md">
                   Partner With Us
                 </a>
               </div>
