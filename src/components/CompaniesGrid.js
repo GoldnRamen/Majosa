@@ -101,38 +101,39 @@ export default function CompaniesGrid(){
         ))}
       </section>
       ):(
-      <div className="text-black p-6 rounded-xl shadow-2xl w-full h-fit relative animate-in fade-in zoom-in duration-300">
+      <div className="text-black lg:p-6 p-1 rounded-xl shadow-2xl w-full h-fit relative animate-in fade-in zoom-in duration-300">
         <button 
           onClick={() => setSelectedId(null)}
-          className="absolute top-4 right-4 bg-cyan-700 hover:bg-white px-3 py-1 rounded z-30"
+          className="absolute lg:top-4 top-10 right-4 bg-cyan-700 hover:bg-white px-3 py-1 rounded z-30"
         >
-          <MdOutlineClose className='text-cyan-950 hover:text-red-900'/>
+          <MdOutlineClose className='text-white hover:text-red-900'/>
         </button>
         <div className='z-20 relative h-full'>
           <div className='text-center backdrop-blur-md backdrop-brightness-100 p-1 mx-auto w-fit rounded-xl'>
             {/* <p className="text-lg text-gray-800 font-bold">{activeCard.desc}</p>bg-linear-to-r from-cyan-950 via-gray-900 to-cyan-900 bg-clip-text text-transparent */}
           </div>
-          <div className="mt-5 p-4 bg-linear-to-tl from-cyan-900 to-blue-100 rounded h-[80vh] relative grid grid-cols-5 gap-3">
-            <div className='z-10 relative col-span-3 border border-cyan-900 rounded-2xl'>
+          <div className="mt-5 lg:p-4 p-1 bg-linear-to-tl from-cyan-900 via-blue-100 to-white rounded lg:h-[80vh] h-fit relative grid lg:grid-cols-5 gap-3">
+            <div className='lg:row-span-1 text-center lg:hidden block mt-10 lg:mt-0'><h1 className="lg:text-2xl text-center font-bold">{activeCard.name}</h1> <hr class="border-t border-gray-400 w-1/2 mx-auto" /></div>
+            <div className='z-10 relative lg:col-span-3 border border-cyan-900 rounded-2xl h-[75vh]'>
               <GalleryCarousel
                 key={activeCard.id}
                 images={activeCard.collage}
                 alts={"Image Not Available"}
               /> 
               </div> 
-            <div className='col-span-2 grid grid-rows-5 gap-3'>  
-              <div className='row-span-1 rounded-2xl border-cyan-950 hover:shadow-black hover:shadow border text-center p-1'><h1 className="text-3xl text-center  font-bold">{activeCard.name}</h1></div>
-              <div className='row-span-4 rounded-2xl p-3 border border-cyan-950 hover:shadow-black hover:shadow h-[55vh] bg-linear-to-t from-cyan-900 to-blue-100'>
-                <div className='py-10 relative scrollable'>
+            <div className='lg:col-span-2 flex flex-col space-y-5'>  
+              <div className='text-center hidden lg:block'><h1 className="lg:text-2xl text-center font-bold">{activeCard.name}</h1> <hr class="border-t border-gray-400 w-1/2 mx-auto" /></div>
+              <p className=' p-2'>{activeCard.desc}</p>
+              <div className='rounded-2xl lg:p-3 p-1 border border-gray-400 h-fit max-h-[40vh] m-2 bg-linear-to-t from-cyan-900 to-blue-100'>
+                <div className='py-5 px-2 relative scrollable'>
                   <h3 className='font-extrabold '>Key Features</h3>
                   {activeCard.features && (
                     <ul className='p-2 list-disc pl-6 list-inside'>
                       {activeCard.features.map((feat, index) => (
-                        <li key={index} className="marker:text-cyan-800 hover:marker:text-white transition marker:text-3xl">{feat}</li>
+                        <li key={index} className="marker:text-cyan-800 hover:marker:text-white transition marker:text-3xl text-sm">{feat}</li>
                       ))}
                     </ul>
                   )}
-                  <p>{activeCard.desc}</p>
                   {/* <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-12 bg-linear-to-t from-white to-white/0"></div> */}
                 </div>
               </div>

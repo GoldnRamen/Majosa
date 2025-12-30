@@ -11,7 +11,7 @@ export default function Header() {
   }
 
   return (
-    <header className="bg-white shadow-sm fixed top-0 left-0 right-0 h-20 z-50">
+    <header className={`bg-white shadow-sm fixed top-0 left-0 right-0 h-20 z-50`}>
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <div className="flex items-center space-x-3">
           <div className="w-10 h-10 bg-linear-to-br from-blue-600 to-cyan-500 rounded-full flex items-center justify-center text-white font-bold"></div>
@@ -34,7 +34,7 @@ export default function Header() {
         
       </div>
       {headerDropDown && (
-        <div className="fixed lg:hidden right-0 left-1 top-20 z-30 bg-linear-to-br from-cyan-900 to-blue-100 bottom-1 p-10 border rounded-l-xl">
+        <div className="fixed lg:hidden right-0 left-1 top-20 z-30 bg-linear-to-br from-cyan-900 to-blue-100 bottom-1 p-10 border rounded-l-xl inset-0">
           <nav className="space-y-10 text-white text-lg flex flex-col" onClick={toggleMenu}>
             <Link href="/" className="smallNav max-w-full">Home</Link>
             <Link href="/about" className="smallNav max-w-full">About</Link>
