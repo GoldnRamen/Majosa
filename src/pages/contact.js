@@ -6,7 +6,7 @@ import Head from 'next/head';
 import { CldImage } from 'next-cloudinary';
 
 export default function Contact(){
-   const addressSchema = {
+  const addressSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Majosa Group",
@@ -17,7 +17,8 @@ export default function Contact(){
       "addressRegion": "Abuja",
       "addressCountry": "NG"
     }
-   }
+  }
+
   return (
     <div className="mt-15 min-h-screen flex flex-col">
       <Header />

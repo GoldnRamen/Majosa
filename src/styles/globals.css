@@ -32,11 +32,11 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: rgb(145, 170, 170); /* Background of the track */
+  background: rgb(5, 46, 46); /* Background of the track */
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #0e2e44; /* Scroll thumb color */
+  background-color: #e2eef7; /* Scroll thumb color */
   border-radius: 10px;     /* Rounded edges */
 }
 

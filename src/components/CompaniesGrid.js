@@ -95,7 +95,7 @@ export default function CompaniesGrid(){
             </div>
             <div className="absolute inset-x-0 lg:bottom-0 bottom-20 translate-y-full lg:group-hover:translate-y-0 transition-all duration-500 backdrop-blur-md bg-white/20 p-4">
               <h3 className="text-white font-semibold">Explore More</h3>
-              <p className="text-cyan-800 hover:cursor-pointer" onClick={() => handleCardClick(c.id)}>Learn More →</p>
+              <p className="text-white border border-white text-sm shadow-xl animate-pulse p-1 rounded hover:cursor-pointer w-fit" onClick={() => handleCardClick(c.id)}>Learn More →</p>
             </div>
           </div>
         ))}
@@ -124,11 +124,11 @@ export default function CompaniesGrid(){
             <div className='lg:col-span-2 flex flex-col space-y-5'>  
               <div className='text-center hidden lg:block'><h1 className="lg:text-2xl text-center font-bold">{activeCard.name}</h1> <hr class="border-t border-gray-400 w-1/2 mx-auto" /></div>
               <p className=' p-2'>{activeCard.desc}</p>
-              <div className='rounded-2xl lg:p-3 p-1 border border-gray-400 h-fit max-h-[40vh] m-2 bg-linear-to-t from-cyan-900 to-blue-100'>
+              <div className='rounded-2xl lg:p-3 p-1 border border-gray-400 max-w-2/3 h-fit max-h-[40vh] m-2 bg-cyan-950 text-white overflow-auto'>
                 <div className='py-5 px-2 relative scrollable'>
                   <h3 className='font-extrabold '>Key Features</h3>
                   {activeCard.features && (
-                    <ul className='p-2 list-disc pl-6 list-inside'>
+                    <ul className='p-2 list-disc pl-6 list-item'>
                       {activeCard.features.map((feat, index) => (
                         <li key={index} className="marker:text-cyan-800 hover:marker:text-white transition marker:text-3xl text-sm">{feat}</li>
                       ))}

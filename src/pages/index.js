@@ -24,7 +24,7 @@ export default function Home(){
           <section id="about" className="space-y-4">
             <h2 className="text-2xl font-semibold">About Majosa Group</h2>
             <p className="">Majosa Group is headquartered in Abuja, Nigeria, and operates through four strong subsidiaries. We combine innovation, integrity, and excellence to create long-term value for our clients, partners, and the communities we serve.</p>
-            <a href="/about" className="text-cyan-800">Learn More →</a>
+            <a href="/about" className="text-white border border-white text-sm shadow-xl animate-pulse p-1 rounded hover:cursor-pointer">Learn More →</a>
           </section>
 
           <section id="sectors" className="space-y-4">
@@ -36,7 +36,7 @@ export default function Home(){
                     <CldImage src={s.img} crop={"fill"} fill sizes="100vw" className="object-cover transition-transform duration-500 group-hover:scale-110" />
                   </div>
                   <div className="p-4">
-                    <h3 className="text-lg font-semibold text-white">{s.name}</h3>
+                    <h3 className="text-lg text-white">{s.name}</h3>
                   </div>
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-linear-to-t from-cyan-800/40 to-transparent" />
                 </div> 
