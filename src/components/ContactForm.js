@@ -31,8 +31,8 @@ export default function ContactForm(){
     <form onSubmit={handleSubmit} className="space-y-4 max-w-lg">
       <input name="name" className="w-full p-3 border rounded" required placeholder="Name" />
       <input name="email" type="email" className="w-full p-3 border rounded" required placeholder="Email" />
-      <textarea name="message" className="w-full p-3 border rounded" required placeholder="Message" rows="4"></textarea>
-      <button type="submit" className="px-4 py-2 bg-blue-600 text-white rounded">Send Message</button>
+      <textarea name="message" className="w-full p-3 border bg-cyan-950 text-white opacity-70 outline-none rounded first-letter:capitalize" required placeholder="Message" rows="4"></textarea>
+      <button type="submit" className="px-4 py-2 bg-cyan-800 text-white rounded">Send Message</button>
       {status && <p className="text-sm mt-2">{status}</p>}
     </form>
   )

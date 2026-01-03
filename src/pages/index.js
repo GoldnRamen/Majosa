@@ -29,7 +29,7 @@ export default function Home(){
 
           <section id="sectors" className="space-y-4">
             <h3 className="text-xl font-semibold">Sectors We Serve</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
               {sectors.map(s => (                
                 <div key={s.id} className="group border-2 border-cyan-100 relative overflow-hidden rounded-2xl bg-transparent shadow-md transition-all duration-500 hover:-translate-y-2 hover:shadow-xl">
                   <div className="relative h-48 w-full">
