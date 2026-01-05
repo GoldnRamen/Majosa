@@ -11,16 +11,16 @@ export default function Header() {
   }
 
   return (
-    <header className={`bg-white shadow-sm fixed top-0 left-0 right-0 h-20 z-50`}>
+    <header className={`bg-linear-to-br from-cyan-900 to-blue-100 shadow-sm fixed top-0 left-0 right-0 h-20 z-50`}>
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <div className="flex items-center space-x-3">
           <div className="w-10 h-10 bg-linear-to-br from-blue-600 to-cyan-500 rounded-full flex items-center justify-center text-white font-bold"></div>
           <div>
-            <h1 className="text-lg font-semibold text-blue-950">Majosa Group</h1>
-            <p className="text-xs text-gray-500">Building Africa's Future</p>
+            <h1 className="text-lg font-semibold text-white">Majosa Group</h1>
+            <p className="text-xs text-white">Building Africa's Future</p>
           </div>
         </div>
-        <nav className="hidden space-x-4 text-blue-900 text-sm md:flex flex-col md:flex-row">
+        <nav className="hidden space-x-4 text-white text-sm md:flex flex-col md:flex-row">
           <Link href="/" className="hover:underline">Home</Link>
           <Link href="/about" className="hover:underline">About</Link>
           <Link href="/companies" className="hover:underline">Our Companies</Link>
