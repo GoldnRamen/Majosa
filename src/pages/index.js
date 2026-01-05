@@ -6,6 +6,9 @@ import Hero from '@/components/Hero'
 import CompaniesGrid from '@/components/CompaniesGrid'
 import { useEffect, useState } from "react"
 import { useRouter } from "next/router"
+import BubbleBackground from "@/components/BackgroundAnimation"
+import OrganicWave from "@/components/BackgroundAnimation"
+import RegularWave from "@/components/BackgroundAnimation"
 
 export default function Home(){
   const sectors = [
@@ -21,17 +24,21 @@ export default function Home(){
       <main className="flex-1">
         <Hero />
         <div className="max-w-6xl mx-auto px-6 py-12 space-y-12 text-cyan-950">
-          <section id="about" className="space-y-4">
-            <h2 className="text-2xl font-semibold">About Majosa Group</h2>
-            <p className="">Majosa Group is headquartered in Abuja, Nigeria, and operates through four strong subsidiaries. We combine innovation, integrity, and excellence to create long-term value for our clients, partners, and the communities we serve.</p>
-            <a href="/about" className="text-cyan-950 border border-cyan-950 text-sm shadow-xl animate-pulse p-1 rounded hover:cursor-pointer">Learn More →</a>
+          
+          <section id="about" className="relative border-y-neutral-700 border-b p-2">
+            <RegularWave />
+            <div className="absolute space-y-4 top-10">
+              <h2 className="text-2xl font-semibold">About Majosa Group</h2>
+              <p className="">Majosa Group is headquartered in Abuja, Nigeria, and operates through four strong subsidiaries. We combine innovation, integrity, and excellence to create long-term value for our clients, partners, and the communities we serve.</p>
+              <a href="/about" className="text-cyan-950 border border-cyan-950 text-sm shadow-xl animate-pulse hover:z-10 hover:animate-none hover:bg-cyan-950 hover:text-white p-1 rounded hover:cursor-pointer">Learn More →</a>
+            </div>            
           </section>
 
           <section id="sectors" className="space-y-4">
             <h3 className="text-xl font-semibold">Sectors We Serve</h3>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
               {sectors.map(s => (                
-                <div key={s.id} className="group border-2 border-cyan-100 relative overflow-hidden rounded-2xl bg-transparent shadow-md transition-all duration-500 hover:-translate-y-2 hover:shadow-xl">
+                <div key={s.id} className="group border-b border-cyan-950 relative overflow-hidden rounded-2xl bg-transparent shadow-md transition-all duration-500 hover:-translate-y-2 hover:shadow-xl">
                   <div className="relative h-48 w-full">
                     <CldImage src={s.img} crop={"fill"} fill sizes="100vw" className="object-cover transition-transform duration-500 group-hover:scale-110" />
                   </div>

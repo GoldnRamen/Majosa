@@ -58,23 +58,23 @@ export default function Services(){
   
   return (
     <>
-      <div className="mt-15 min-h-screen bg-linear-to-br from-cyan-900 to-blue-100  flex flex-col">
+      <div className="mt-15 min-h-screen bg-linear-to-br from-cyan-50 to-white  flex flex-col">
         <Header />
-        <main className="lg:mx-20 px-6 py-12 space-y-8">
+        <main className="lg:mx-20 px-6 py-12 space-y-8 text-cyan-950">
           <h1 className="text-3xl font-bold">Services</h1>
           <p>At Majosa Group, our operations cut across major economic sectors, providing integrated solutions that meet international standards</p>
           {selectedId === null ? (
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
               {services.map(s => (                
-                <div key={s.id} className="group border-2 border-cyan-100 relative overflow-hidden rounded-2xl bg-transparent shadow-md transition-all duration-500 hover:-translate-y-2 hover:shadow-xl">
+                <div key={s.id} className="group border border-white hover:shadow-cyan-950 border-b-cyan-950 relative overflow-hidden rounded-2xl bg-transparent shadow-md transition-all duration-500 hover:-translate-y-2 hover:shadow-xl">
                   <div className="relative h-48 w-full">
                     <CldImage src={s.img} crop={"fill"} fill sizes="100vw" className="object-cover transition-transform duration-500 group-hover:scale-110" />
                   </div>
                   <div className="p-4">
-                    <h3 className="text-lg text-white">{s.name}</h3>
+                    <h3 className="text-lg text-cyan-950">{s.name}</h3>
                     <div className="absolute inset-x-0 z-20 text-sm lg:bottom-0 bottom-20 translate-y-full lg:group-hover:translate-y-0 transition-all duration-500 backdrop-blur-md bg-white/20 p-4">
-                    <h3 className="text-white font-semibold">{s.name}</h3>
-                    <p className="text-white border border-white text-sm shadow-xl animate-pulse p-1 rounded hover:cursor-pointer w-fit" onClick={() => handleCardClick(s.id)}>Learn More →</p>
+                    <h3 className="text-cyan-950 font-semibold">{s.name}</h3>
+                    <p className="text-cyan-950 border border-cyan-950 text-sm shadow-xl animate-pulse p-1 rounded hover:cursor-pointer w-fit" onClick={() => handleCardClick(s.id)}>Learn More →</p>
                   </div>
                   </div>
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-linear-to-t from-cyan-800/40 to-transparent" />
@@ -85,9 +85,9 @@ export default function Services(){
             <div className="text-black lg:p-6 p-1 rounded-xl shadow-2xl w-full h-fit relative animate-in fade-in zoom-in duration-300">
               <button 
                 onClick={() => setSelectedId(null)}
-                className="absolute lg:top-4 top-10 right-4 bg-cyan-700 hover:bg-white px-3 py-1 rounded z-30"
+                className="absolute lg:top-4 top-10 right-4 bg-cyan-700 hover:bg-white hover:border hover:border-cyan-950 px-3 py-1 rounded z-30 text-white hover:text-cyan-950"
               >
-                <MdOutlineClose className='text-white hover:text-red-900'/>
+                <MdOutlineClose className='hover:text-red-900'/>
               </button>
               <div className='z-20 relative h-full'>
                 <div className='text-center backdrop-blur-md backdrop-brightness-100 p-1 mx-auto w-fit rounded-xl'>

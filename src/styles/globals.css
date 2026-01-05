@@ -106,3 +106,33 @@ body {
     box-shadow: 0 0 0 1em transparent;
   }
 }
+
+
+@keyframes float-up {
+  0% { transform: translateY(0) scale(1); opacity: 0; }
+  20% { opacity: 0.5; }
+  100% { transform: translateY(-110vh) scale(1.5); opacity: 0; }
+}
+
+.animate-float-up {
+  animation: float-up linear infinite;
+}
+
+@keyframes slide-wave {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    /* Slide exactly half the width of the 200% wide SVG */
+    transform: translateX(-50%);
+  }
+}
+
+.animate-slide-wave {
+  /* 8 seconds for a visible, steady "regular" motion */
+  animation: slide-wave 8s linear infinite;
+}
+.animate-slide-wave2 {
+  /* 8 seconds for a visible, steady "regular" motion */
+  animation: slide-wave 4s linear infinite;
+}

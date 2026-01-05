@@ -4,16 +4,16 @@ import CompaniesGrid from '../components/CompaniesGrid'
 
 export default function Companies(){
   return (
-    <div className="mt-15 min-h-screen bg-linear-to-br from-cyan-900 to-blue-100 flex flex-col">
+    <div className="mt-15 min-h-screen bg-linear-to-br from-cyan-50 to-white flex flex-col">
       <Header />
-      <main className="flex-1 max-w-full lg:mx-20 px-6 py-12 space-y-8">
+      <main className="flex-1 max-w-full lg:mx-20 px-6 py-12 space-y-8 text-cyan-950">
         <h1 className="text-3xl font-bold">Our Companies</h1>
-        <p className="text-white">
+        <p className="text-cyan-950">
           Majosa Group is headquartered in Abuja, Nigeria, and operates through four strong subsidiaries.
           Each subsidiary focuses on its area of expertise while contributing to the Group's shared vision.  
         </p>
         <CompaniesGrid />
-        <p className="text-white">We combine innovation, integrity, and excellence to create long-term value for our clients, partners, and the communities we serve.</p>
+        <p className="text-cyan-950">We combine innovation, integrity, and excellence to create long-term value for our clients, partners, and the communities we serve.</p>
       </main>
       <Footer />
     </div>

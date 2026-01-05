@@ -81,7 +81,7 @@ export default function CompaniesGrid(){
     {selectedId === null ? (
       <section id="companies" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {companies.map(c => (
-          <div key={c.id} className="group relative border-2 border-cyan-100 overflow-hidden rounded-2xl shadow-lg shadow-black">
+          <div key={c.id} className="group relative border border-cyan-950 overflow-hidden rounded-2xl shadow shadow-black">
             <div className='h-64 w-full'>
               <CldImage
                 src={c.img}

@@ -14,7 +14,9 @@ export default function Header() {
     <header className={`bg-linear-to-br from-cyan-900 to-blue-100 shadow-sm fixed top-0 left-0 right-0 h-20 z-50`}>
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <div className="flex items-center space-x-3">
-          <div className="w-10 h-10 bg-linear-to-br from-blue-600 to-cyan-500 rounded-full flex items-center justify-center text-white font-bold"></div>
+          <div className='w-12 h-12 bg-white rounded-full'>
+            <div className="w-10 h-10 bg-linear-to-br from-white to-cyan-800 rounded-full flex items-center justify-center text-white font-bold"></div>
+          </div>
           <div>
             <h1 className="text-lg font-semibold text-white">Majosa Group</h1>
             <p className="text-xs text-white">Building Africa's Future</p>
@@ -29,8 +31,8 @@ export default function Header() {
           <Link href="/contact" className="hover:underline">Contact</Link>
         </nav>    
         {!headerDropDown ? 
-        <CiMenuBurger className="md:hidden text-blue-950 cursor-pointer" onClick={toggleMenu} /> :
-        <TfiClose className="md:hidden text-blue-950 cursor-pointer" onClick={toggleMenu} /> }   
+        <CiMenuBurger className="md:hidden text-cyan-50 cursor-pointer" onClick={toggleMenu} /> :
+        <TfiClose className="md:hidden text-cyan-50 cursor-pointer" onClick={toggleMenu} /> }   
         
       </div>
       {headerDropDown && (

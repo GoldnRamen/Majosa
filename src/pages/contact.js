@@ -23,7 +23,7 @@ export default function Contact(){
   }
 
   return (
-    <div className="mt-15 min-h-screen bg-linear-to-br from-cyan-900 to-blue-100 flex flex-col">
+    <div className="mt-15 min-h-screen bg-linear-to-br from-cyan-50 to-white flex flex-col">
       <Header />
       <Head>
         <title>Contact Us - Majosa Group</title>
@@ -34,11 +34,11 @@ export default function Contact(){
           }}
         />
       </Head>
-      <main className="flex-1 max-w-6xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+      <main className="flex-1 max-w-6xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-2 text-cyan-950 gap-8">
         <div className='space-y-8'>
           <h1 className="text-3xl font-bold">Contact Us</h1>          
           <div className='space-y-3 rounded ml-10 border-l-4 space-x-1'>
-            <div className='bg-linear-to-r from-cyan-900 via-transparent to-transparent p-2 flex border-b'>
+            <div className='bg-linear-to-r from-transparent via-transparent to-gray-100 p-2 flex border-b'>
               <div className='flex flex-col space-y-6 border-r border-dotted px-2'>
                 <FaLocationDot className='text-2xl'/>      
                 <SiGmail className='text-2xl'/>        
