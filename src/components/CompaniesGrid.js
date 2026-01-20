@@ -7,10 +7,10 @@ import { useRouter } from 'next/router';
 
 export default function CompaniesGrid(){
   const companies = [
-    {id: 'geo', name: 'Majosa Geotechnical Investment Ltd', desc: 'We provide responsible, efficient, and sustainable mining operations that unlock the full potential of Africa’s natural resources.', img: "28d7e9a1-c9ef-4340-8610-6db1b7f9fdd9_wy13q1", features: [ "Exploration", "Mining", "Borehole Drilling", "Geotechnical Engineering", "Geotechnical Survey & Consulting", "Mineral Export"], collage: ["a358022c-5196-42c8-8f63-e0a62f4b0b82_i7lq9q", "1842d7b7-1a75-448d-813a-f1dd34efd303_r9u7vh", "2baa2ca0-75f0-48fd-926a-6ae1696a562e_x6dwh8", "32a9896f-37cb-4d98-be47-9fcfa4895826_yf3aye", "49cf8411-d96f-4cc3-9e76-59aba141e706_vzprlc"] },
-    {id: 'agro', name: 'Majosa Agrochemical Limited', desc: 'Driving food security through modern agriculture and rice processing. Our 24-ton-per-day rice mill supports Nigeria’s agricultural value chain, while our fertilizer and agrochemical services empower farmers nationwide.', img: "d0d2e546-da2c-473b-b2c3-228b659b153c_yoah5j", features: [ "Rice Farming & Processing", "Fertilizer & Agrochemical Sales", "Mechanized Farming"], collage: ["0ebe12b9-35b3-4e83-ae87-e272e6ab5ad9_bhcufs", "004f9437-c1bb-47fe-a93d-d929f4f4608b_xdkmcm", "52bffc29-3cc0-4262-89dd-29994e5364a5_rb8fmt"] },
-    {id: 'global', name: 'Majosa Global Services Nig. Ltd', desc: 'We build infrastructure and deliver engineering excellence that supports national development.', img: "f9018f9c-ac22-470c-8aff-0ff288defde1_ywmdeu", features: [ "Civil & Structural Construction", "Real Estate Development", "Oil & Gas Support Services", "General Contracting"], collage: ["b0c7eaeb-fd62-4aea-ab8e-93ca6bf60f5a_ufxi3n", "145632f1-0d8e-4f69-8ed1-47a45d55d943_nezrsa", "3e317122-a42f-4331-8301-6e602ba90ce6_tetzjf", "ba1a4047-07a9-4a00-81a9-fa57826f65b0_gkuoiw"] },
-    {id: 'enterprise', name: 'Majosa Enterprise', desc: 'Your neighborhood supermarket and retail hub offering quality products at affordable prices.', img: "0b6f32ef-3f41-4996-b1d7-0d90d3273968_djtgri", features: ["Retail Supermarket", "General Merchandise & Distribution"], collage:["ba1a4047-07a9-4a00-81a9-fa57826f65b0_gkuoiw", "9853f9c0-8bc5-4c62-8054-03aaa4ef6257_f9nomh"]}
+    {id: 'geo', name: 'Majosa Geotechnical Investment Ltd', desc: 'We provide responsible, efficient, and sustainable mining operations that unlock the full potential of Africa’s natural resources.', img: "28d7e9a1-c9ef-4340-8610-6db1b7f9fdd9_wy13q1", features: [ "Exploration", "Mining", "Borehole Drilling", "Geotechnical Engineering", "Geotechnical Survey & Consulting", "Mineral Export"], collage: ["a358022c-5196-42c8-8f63-e0a62f4b0b82_i7lq9q", "1842d7b7-1a75-448d-813a-f1dd34efd303_r9u7vh", "2baa2ca0-75f0-48fd-926a-6ae1696a562e_x6dwh8", "32a9896f-37cb-4d98-be47-9fcfa4895826_yf3aye", "49cf8411-d96f-4cc3-9e76-59aba141e706_vzprlc"], bgColor: "bg-slate-600" },
+    {id: 'agro', name: 'Majosa Agrochemical Limited', desc: 'Driving food security through modern agriculture and rice processing. Our 24-ton-per-day rice mill supports Nigeria’s agricultural value chain, while our fertilizer and agrochemical services empower farmers nationwide.', img: "d0d2e546-da2c-473b-b2c3-228b659b153c_yoah5j", features: [ "Rice Farming & Processing", "Fertilizer & Agrochemical Sales", "Mechanized Farming"], collage: ["0ebe12b9-35b3-4e83-ae87-e272e6ab5ad9_bhcufs", "004f9437-c1bb-47fe-a93d-d929f4f4608b_xdkmcm", "52bffc29-3cc0-4262-89dd-29994e5364a5_rb8fmt"], bgColor: "bg-green-700" },
+    {id: 'global', name: 'Majosa Global Services Nig. Ltd', desc: 'We build infrastructure and deliver engineering excellence that supports national development.', img: "f9018f9c-ac22-470c-8aff-0ff288defde1_ywmdeu", features: [ "Civil & Structural Construction", "Real Estate Development", "Oil & Gas Support Services", "General Contracting"], collage: ["b0c7eaeb-fd62-4aea-ab8e-93ca6bf60f5a_ufxi3n", "145632f1-0d8e-4f69-8ed1-47a45d55d943_nezrsa", "3e317122-a42f-4331-8301-6e602ba90ce6_tetzjf", "ba1a4047-07a9-4a00-81a9-fa57826f65b0_gkuoiw"], bgColor: "bg-orange-500"},
+    {id: 'enterprise', name: 'Majosa Enterprise', desc: 'Your neighborhood supermarket and retail hub offering quality products at affordable prices.', img: "0b6f32ef-3f41-4996-b1d7-0d90d3273968_djtgri", features: ["Retail Supermarket", "General Merchandise & Distribution"], collage:["ba1a4047-07a9-4a00-81a9-fa57826f65b0_gkuoiw", "9853f9c0-8bc5-4c62-8054-03aaa4ef6257_f9nomh"], bgColor: "bg-lime-300"}
   ]
 
   const [selectedId, setSelectedId] = useState(null);
@@ -81,7 +81,7 @@ export default function CompaniesGrid(){
     {selectedId === null ? (
       <section id="companies" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {companies.map(c => (
-          <div key={c.id} className="group relative border border-cyan-950 overflow-hidden rounded-2xl shadow shadow-black">
+          <div key={c.id} className={`group relative border overflow-hidden rounded-2xl shadow shadow-black`}>
             <div className='h-64 w-full'>
               <CldImage
                 src={c.img}
@@ -90,7 +90,7 @@ export default function CompaniesGrid(){
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
                 alt='Picture not found'
               />
-              <div className="absolute z-10 top-2 left-2 h-12 w-12 bg-gray-700 rounded flex items-center justify-center font-semibold text-white">{c.name.split(' ')[1]?.slice(0,2) || 'MG'}</div>
+              <div className={`absolute z-10 top-2 left-2 h-12 w-12 ${c.bgColor} rounded flex items-center justify-center font-semibold text-white`}>{c.name.split(' ')[1]?.slice(0,2) || 'MG'}</div>
               <div className="absolute z-10 top-20 left-10 right-5 h-fit w-fit p-2 justify-center font-semibold backdrop-blur-md bg-black/20 rounded text-white">{c.name}</div>
             </div>
             <div className="absolute inset-x-0 lg:bottom-0 bottom-20 translate-y-full lg:group-hover:translate-y-0 transition-all duration-500 backdrop-blur-md bg-white/20 p-4">
@@ -104,7 +104,7 @@ export default function CompaniesGrid(){
       <div className="text-black lg:p-6 p-1 rounded-xl shadow-2xl w-full h-fit relative animate-in fade-in zoom-in duration-300">
         <button 
           onClick={() => setSelectedId(null)}
-          className="absolute lg:top-4 top-10 right-4 bg-cyan-700 hover:bg-white px-3 py-1 rounded z-30"
+          className="absolute lg:top-4 top-10 right-4 bg-yellow-950 hover:bg-white px-3 py-1 rounded z-30"
         >
           <MdOutlineClose className='text-white hover:text-red-900'/>
         </button>
@@ -112,9 +112,9 @@ export default function CompaniesGrid(){
           <div className='text-center backdrop-blur-md backdrop-brightness-100 p-1 mx-auto w-fit rounded-xl'>
             {/* <p className="text-lg text-gray-800 font-bold">{activeCard.desc}</p>bg-linear-to-r from-cyan-950 via-gray-900 to-cyan-900 bg-clip-text text-transparent */}
           </div>
-          <div className="mt-5 lg:p-4 p-1 bg-linear-to-tl from-cyan-900 via-blue-100 to-white rounded lg:h-[80vh] h-fit relative grid lg:grid-cols-5 gap-3">
+          <div className={`mt-5 lg:p-4 p-1 bg-linear-to-tl from-yellow-950 via-white to-white rounded lg:h-[80vh] h-fit relative grid lg:grid-cols-5 gap-3`}>
             <div className='lg:row-span-1 text-center lg:hidden block mt-10 lg:mt-0'><h1 className="lg:text-2xl text-center font-bold">{activeCard.name}</h1> <hr class="border-t border-gray-400 w-1/2 mx-auto" /></div>
-            <div className='z-10 relative lg:col-span-3 border border-cyan-900 rounded-2xl h-[75vh]'>
+            <div className='z-10 relative lg:col-span-3 border border-yellow-950 rounded-2xl h-[75vh]'>
               <GalleryCarousel
                 key={activeCard.id}
                 images={activeCard.collage}
@@ -124,13 +124,13 @@ export default function CompaniesGrid(){
             <div className='lg:col-span-2 flex flex-col space-y-5'>  
               <div className='text-center hidden lg:block'><h1 className="lg:text-2xl text-center font-bold">{activeCard.name}</h1> <hr class="border-t border-gray-400 w-1/2 mx-auto" /></div>
               <p className=' p-2'>{activeCard.desc}</p>
-              <div className='rounded-2xl lg:p-3 p-1 border border-gray-400 max-w-2/3 h-fit max-h-[40vh] m-2 bg-cyan-950 text-white overflow-auto'>
+              <div className='rounded-2xl lg:p-3 p-1 border border-gray-400 max-w-2/3 h-fit max-h-[40vh] m-2 bg-yellow-950 text-white overflow-auto'>
                 <div className='py-5 px-2 relative scrollable'>
                   <h3 className='font-extrabold '>Key Features</h3>
                   {activeCard.features && (
                     <ul className='p-2 list-disc pl-6 list-item'>
                       {activeCard.features.map((feat, index) => (
-                        <li key={index} className="marker:text-cyan-800 hover:marker:text-white transition marker:text-3xl text-sm">{feat}</li>
+                        <li key={index} className="marker:text-yellow-950 hover:marker:text-white transition marker:text-3xl text-sm">{feat}</li>
                       ))}
                     </ul>
                   )}
