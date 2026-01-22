@@ -9,6 +9,7 @@ import { useRouter } from "next/router"
 import BubbleBackground from "@/components/BackgroundAnimation"
 import OrganicWave from "@/components/BackgroundAnimation"
 import RegularWave from "@/components/BackgroundAnimation"
+import FloatTab from "@/components/FloatTab"
 
 export default function Home(){
   const sectors = [
@@ -22,6 +23,7 @@ export default function Home(){
     <div className="min-h-screen flex flex-col mt-15 bg-cyan-50">
       <Header />
       <main className="flex-1">
+        <FloatTab />
         <Hero />
         <div className="max-w-6xl mx-auto px-6 py-12 space-y-12 text-cyan-950">
           

@@ -4,6 +4,7 @@ import { useContext } from 'react';
 import { CiMenuBurger } from "react-icons/ci";
 import { TfiClose } from "react-icons/tfi";
 import { useRouter } from 'next/router';
+import { FaShoppingCart } from "react-icons/fa";
 
 export default function Header() {
   const {headerDropDown, setHeaderDropDown} = useContext(BurgerContext)
@@ -44,7 +45,7 @@ export default function Header() {
             <Link href="/companies" className="smallNav max-w-full">Our Companies</Link>
             <Link href="/services" className="smallNav max-w-full">Services</Link>
             <Link href="/leadership" className="smallNav max-w-full">Leadership</Link>
-            <Link href="/contact" className="smallNav max-w-full">Contact</Link>
+            <Link href="/contact" className="smallNav max-w-full">Contact</Link>            
           </nav>   
       </div>
       )}
