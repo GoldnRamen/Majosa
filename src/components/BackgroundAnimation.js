@@ -1,6 +1,6 @@
 export default function ScrollingWave() {
   return (
-    <div className="relative w-full h-64 overflow-hidden bg-transparent">
+    <div className="relative w-full h-64 overflow-hidden bg-transparent hidden lg:block">
       {/* We use a very wide SVG (200% width) to allow it to scroll infinitely */}
       <svg
         viewBox="0 0 1440 320"

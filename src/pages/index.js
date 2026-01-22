@@ -29,7 +29,7 @@ export default function Home(){
           
           <section id="about" className="relative border-y-neutral-700 border-b p-2">
             <RegularWave />
-            <div className="absolute space-y-4 top-10">
+            <div className="lg:absolute space-y-4 top-10">
               <h2 className="text-2xl font-semibold">About Majosa Group</h2>
               <p className="">Majosa Group is headquartered in Abuja, Nigeria, and operates through four strong subsidiaries. We combine innovation, integrity, and excellence to create long-term value for our clients, partners, and the communities we serve.</p>
               <a href="/about" className="text-cyan-950 border border-cyan-950 text-sm shadow-xl animate-pulse hover:z-10 hover:animate-none hover:bg-cyan-950 hover:text-white p-1 rounded hover:cursor-pointer">Learn More →</a>

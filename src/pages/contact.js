@@ -36,8 +36,21 @@ export default function Contact(){
       </Head>
       <main className="flex-1 max-w-6xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-2 text-cyan-950 gap-8">
         <div className='space-y-8'>
-          <h1 className="text-3xl font-bold">Contact Us</h1>          
-          <div className='space-y-3 rounded ml-10 border-l-4 space-x-1'>
+          <h1 className="text-3xl font-bold">Contact Us</h1>                             
+          <div className="mt-6">
+            <div className="w-full h-72 bg-gray-200 text-cyan-900 items-center flex flex-col justify-center">
+              {/* <div className="overflow-hidden rounded-xl border-2 border-slate-200 shadow-lg bg-white">
+                <div className="relative w-full h-0 pb-[56.25%]">
+                  <iframe               
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.510991954468!2d7.618922675018691!3d9.017062591043759!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e05fca66b146b%3A0x5759e44f2a12abb1!2sWorldgate%20shopping%20centre!5e0!3m2!1sen!2sng!4v1769085090572!5m2!1sen!2sng" 
+                    className="absolute top-0 left-0 w-full h-full border-0"
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                  </iframe>
+                </div>              
+              </div>               */}
+              <div className='space-y-3 rounded ml-10 border-l-4 space-x-1'>
             <div className='bg-linear-to-r from-transparent via-transparent to-gray-100 p-2 flex border-b'>
               <div className='flex flex-col space-y-6 border-r border-dotted px-2'>
                 <FaLocationDot className='text-2xl'/>      
@@ -56,19 +69,17 @@ export default function Contact(){
                   </div> 
               </div>
             </div>
-          </div>           
-          <div className="mt-6">
-            <div className="w-full h-48 bg-gray-200 text-cyan-900 items-center flex flex-col justify-center">
-              <CldImage src='google-5849613_1280_iid3sd' width={100} height={30} />
-              <a 
-                href="https://www.google.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View in mobile on Google Maps
+          </div>  
+            </div>
+            <div className="p-4 bg-cyan-950 flex justify-between items-center">
+              <span className="text-white font-medium">Worldgate shopping centre</span>
+              <a href="https://maps.google.com/?cid=6294312982886394801&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" className="bg-cyan-500 text-slate-950 px-4 py-2 rounded-lg font-bold text-sm hover:bg-cyan-50 transition-colors">
+                Open in App
               </a>
             </div>
           </div>
+          <div className='space-y-3 rounded border-l-4 space-x-1'>            
+          </div>  
         </div>
         <div>
           <ContactForm />

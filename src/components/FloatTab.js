@@ -12,7 +12,7 @@ export default function FloatTab (){
     }, []);
 
     return(
-        <div className='relative'>
+        <div className='relative hidden lg:block'>
             <div
                 className={`bg-gray-700 fixed block top-15 z-50 lg:-left-32 left-3 lg:-right-10 opacity-95 rounded-full p-1 items-center w-10 shadow-2xl 
                     transition-[margin,width] duration-1000 ease-in-out animated-slide-right

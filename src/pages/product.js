@@ -8,6 +8,7 @@ import Header from '@/components/Header';
 import { CiHeart } from "react-icons/ci";
 import { FaHeart } from "react-icons/fa";
 import { CartContext } from '@/context/CartContext';
+import AllProductGrid from '@/components/productSample';
 
 export default function ProductGrid(){
   const products = [
@@ -95,99 +96,12 @@ export default function ProductGrid(){
 
     const hideHover = (id) => {
         setHovMsg(prev => ({ ...prev, [id]: false }));
-};
+    };
 
   return (
     <>     
     <Header />
-    <div className="mt-15 min-h-screen bg-linear-to-br from-cyan-50 to-white flex flex-col">
-        <main className="flex-1 max-w-full lg:mx-20 px-6 py-12 space-y-8 text-cyan-950">
-            <h1 className="text-3xl font-bold">Our Products</h1>
-            {selectedId === null ? (             
-                <section id="products" className="mt-15 p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {products.map(c => (
-                    <div key={c.id} className={`group relative border overflow-hidden rounded-2xl shadow shadow-black`}>
-                        <div className='h-64 w-full'>
-                            <CldImage
-                                src={c.img}
-                                fill
-                                sizes='100vw'
-                                className="object-cover transition-transform duration-700 group-hover:scale-105"
-                                alt='Picture not found'
-                            />
-                            <div className={`absolute z-10 top-2 left-2 h-12 w-12 ${c.bgColor} rounded flex items-center justify-center font-semibold text-white`}>{c.name.split(' ')[1]?.slice(0,2) || 'MG'}</div>                
-                            <div
-                                key={c.id}
-                                onClick={() => toggleLike(c.id)}
-                                className="absolute z-10 top-2 right-2 h-8 w-8 rounded flex items-center justify-center cursor-pointer"
-                                >
-                                {clicked[c.id] ? (
-                                    <>
-                                        <FaHeart onMouseEnter={()=>showHover(c.id)} onMouseLeave={()=>hideHover(c.id)} className="w-7 h-7 text-cyan-950" />
-                                        {hovMsg[c.id] ? <div className='absolute z-20 top-9 right-2 text-sm w-28 bg-white rounded p-2'>Drop from Cart</div> : null}                                                                                           
-                                    </>
-                                ) : (
-                                    <>
-                                        <CiHeart onMouseEnter={()=>showHover(c.id)} onMouseLeave={()=>hideHover(c.id)} className="w-7 h-7 text-cyan-900" />
-                                        {hovMsg[c.id] ? <div className='absolute z-30 top-9 right-2 text-sm w-28 bg-white rounded p-2'>Add to Cart</div> : null}
-                                    </>
-                                )}
-                            </div>                               
-                           
-                            <div className="absolute inset-x-0 bottom-0 backdrop-blur-md bg-white/20 p-4">                        
-                                <div className='relative flex justify-between items-center text-white'>
-                                    <p className="h-fit w-fit p-2 justify-center font-semibold text-white">{c.name}</p>                        
-                                    <p className="p-1 rounded-lg border text-sm">$50</p>                                
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    ))}
-                </section>
-                ):(
-                <div className="text-black lg:p-6 p-1 rounded-xl shadow-2xl w-full h-fit relative animate-in fade-in zoom-in duration-300">
-                    <button 
-                    onClick={() => setSelectedId(null)}
-                    className="absolute lg:top-4 top-10 right-4 bg-yellow-950 hover:bg-white px-3 py-1 rounded z-30"
-                    >
-                    <MdOutlineClose className='text-white hover:text-red-900'/>
-                    </button>
-                    <div className='z-20 relative h-full'>
-                    <div className='text-center backdrop-blur-md backdrop-brightness-100 p-1 mx-auto w-fit rounded-xl'>
-                        {/* <p className="text-lg text-gray-800 font-bold">{activeCard.desc}</p>bg-linear-to-r from-cyan-950 via-gray-900 to-cyan-900 bg-clip-text text-transparent */}
-                    </div>
-                    <div className={`mt-5 lg:p-4 p-1 bg-linear-to-tl from-yellow-950 via-white to-white rounded lg:h-[80vh] h-fit relative grid lg:grid-cols-5 gap-3`}>
-                        <div className='lg:row-span-1 text-center lg:hidden block mt-10 lg:mt-0'><h1 className="lg:text-2xl text-center font-bold">{activeCard.name}</h1> <hr class="border-t border-gray-400 w-1/2 mx-auto" /></div>
-                        <div className='z-10 relative lg:col-span-3 border border-yellow-950 rounded-2xl h-[75vh]'>
-                        <GalleryCarousel
-                            key={activeCard.id}
-                            images={activeCard.collage}
-                            alts={"Image Not Available"}
-                        /> 
-                        </div> 
-                        <div className='lg:col-span-2 flex flex-col space-y-5'>  
-                        <div className='text-center hidden lg:block'><h1 className="lg:text-2xl text-center font-bold">{activeCard.name}</h1> <hr class="border-t border-gray-400 w-1/2 mx-auto" /></div>
-                        <p className=' p-2'>{activeCard.desc}</p>
-                        <div className='rounded-2xl lg:p-3 p-1 border border-gray-400 max-w-2/3 h-fit max-h-[40vh] m-2 bg-yellow-950 text-white overflow-auto'>
-                            <div className='py-5 px-2 relative scrollable'>
-                            <h3 className='font-extrabold '>Key Features</h3>
-                            {activeCard.features && (
-                                <ul className='p-2 list-disc pl-6 list-item'>
-                                {activeCard.features.map((feat, index) => (
-                                    <li key={index} className="marker:text-yellow-950 hover:marker:text-white transition marker:text-3xl text-sm">{feat}</li>
-                                ))}
-                                </ul>
-                            )}
-                            {/* <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-12 bg-linear-to-t from-white to-white/0"></div> */}
-                            </div>
-                        </div>
-                        </div>           
-                    </div>
-                    </div>
-                </div>     
-            )}
-        </main>
-    </div>
+    <AllProductGrid />
     </>
   )
 }

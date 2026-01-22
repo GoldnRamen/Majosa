@@ -2,6 +2,7 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 export default function About(){
     const image1 = "https://ideogram.ai/assets/image/lossless/response/5EyoXob3QjycyUsXvuPF3A"
@@ -45,6 +46,14 @@ export default function About(){
             <div className="p-3 bg-white border rounded flex items-center gap-5"><img className='w-28' src="https://res.cloudinary.com/do2yiivip/image/upload/v1766583109/values_fubsnx.png" /><div><strong>Mission</strong><br/><p>Transforming lives and industries through responsible investment...</p></div></div>
             <div className="p-3 bg-white border rounded flex items-center gap-5"><img className='w-28' src="https://res.cloudinary.com/do2yiivip/image/upload/v1766583097/mission_tn56zi.png" /><div><strong>Core Values</strong><br/><p>Integrity | Innovation | Excellence | Sustainability | Empowerment</p></div></div>
           </section>
+        </div>
+        <div className='lg:hidden block border text-cyan-950 hover:text-white p-2 m-2 px-10 hover:bg-cyan-950'>
+          <p className=''>Explore</p>
+          <ul className='space-x-2 flex border-cyan-950 rounded-lg p-2'>
+            <Link href={"/leadership"}><li className='rounded border p-2 hover:shadow-cyan-900 cursor-pointer shadow-lg hover:shadow-xl shadow-cyan-950'>Our Leadership</li></Link>
+            <Link href={"/services"}><li className='rounded border p-2 hover:shadow-cyan-900 cursor-pointer shadow-lg hover:shadow-xl shadow-cyan-950'>Our Services</li></Link>
+            <Link href={"/contact"}><li className='rounded border p-2 hover:shadow-cyan-900 cursor-pointer shadow-lg hover:shadow-xl shadow-cyan-950'>Contact Us</li></Link>
+          </ul>
         </div>
       </main>
       <Footer />
