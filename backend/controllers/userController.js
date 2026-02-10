@@ -96,6 +96,39 @@ export const updateUser = async (req, res) => {
     }
 };
 
+// Create new user (admin only)
+export const createUser = async (req, res) => {
+    try {
+        const { firstName, lastName, email, password, phone, role } = req.body;
+        
+        // Check if user already exists
+        const existingUser = await userModel.findOne({ email });
+        if (existingUser) {
+            return res.status(400).json({ message: "User already exists" });
+        }
+        
+        // Hash password
+        const salt = await bcrypt.genSalt(10);
+        const hashedPassword = await bcrypt.hash(password, salt);
+        
+        // Create new user with optional role
+        const newUser = new userModel({
+            firstName,
+            lastName,
+            email,
+            password: hashedPassword,
+            phone,
+            role: role || "customer", // Default to "customer" if no role specified
+        });
+        
+        await newUser.save();
+        res.status(201).json({ message: "User created successfully", user: newUser });
+    } catch (error) {
+        console.error("Error creating user:", error);
+        res.status(500).json({ message: "Server error" });
+    }
+};
+
 // Delete user
 export const deleteUser = async (req, res) => {
     try {

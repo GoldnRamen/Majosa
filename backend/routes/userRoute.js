@@ -1,19 +1,18 @@
 import express from "express";
-import { registerUser , loginUser, getAllUsers, getUserById, createUser, updateUser, deleteUser } from "../controllers/userController.js";
+import { registerUser, loginUser, getAllUsers, getUserById, createUser, updateUser, deleteUser } from "../controllers/userController.js";
+import { authenticateUser, isAdmin } from "../middlewares/authMiddleware.js";
 
 const router = express.Router();
 
-// User registration
+// No middleware needed - public routes
 router.post("/register", registerUser);
-// User login
 router.post("/login", loginUser);
-// Get all users
-router.get("/", getAllUsers);
-// Get user by ID
-router.get("/:id", getUserById);
-// Create new user (admin only)
-router.post("/", createUser);
-// Update user (admin only)
-router.put("/:id", updateUser);
-// Delete user (admin only)
-router.delete("/:id", deleteUser);
+
+// Admin-only routes - require authentication + admin role
+router.get("/", authenticateUser, isAdmin, getAllUsers);
+router.get("/:id", authenticateUser, isAdmin, getUserById);
+router.post("/", authenticateUser, isAdmin, createUser);
+router.put("/:id", authenticateUser, isAdmin, updateUser);
+router.delete("/:id", authenticateUser, isAdmin, deleteUser);
+
+export default router;
