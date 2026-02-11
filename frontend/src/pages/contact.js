@@ -88,10 +88,10 @@ export default function Contact(){
                         <div className='flex items-start p-1 space-x-2 mx-1 w-fit'>      
                           <p className="text-sm font-semibold">Corporate Headquarters: Suite A159, Worldgate Shopping Centre, Karu, Abuja, Nigeria</p>
                           </div>            
-                          <div className='flex items-end p-1 space-x-2 hover:underline cursor-pointer hover:bg-white hover:text-cyan-900 hover:rounded mx-1 w-fit'>    
+                          <div className='flex items-end p-1 space-x-2 hover:underline cursor-pointer hover:bg-white hover:text-cyan-900 hover:rounded mx-1 w-fit absolute bottom-10'>    
                             <a href="https://mail.google.com/mail/?view=cm&fs=1&to=meetmajosa@gmail.com" target="_blank" rel="noopener noreferrer" className="text-sm font-semibold">info@majosagroup.com</a>
                           </div>            
-                          <div className='flex items-end p-1 space-x-2 mx-1 w-fit'>        
+                          <div className='flex items-end p-1 space-x-2 mx-1 w-fit absolute bottom-2'>        
                             <p className="mt-2 text-sm font-semibold">+2347056849844</p>
                           </div> 
                       </div>
