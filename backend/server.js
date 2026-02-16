@@ -8,7 +8,7 @@ import connectDB from './config/database.js';
 dotenv.config();
 
 // Import routes
-// import authRoutes from './routes/authRoutes.js';
+import userRoutes from './routes/userRoutes.js';
 // import propertyRoutes from './routes/propertyRoutes.js';
 // import contactRoutes from './routes/contactRoutes.js';
 
@@ -23,7 +23,7 @@ app.use(express.urlencoded({ extended: true }));
 
 
 // Routes
-// app.use('/api/auth', authRoutes);
+app.use('/api/users', userRoutes);
 // app.use('/api/properties', propertyRoutes);
 // app.use('/api/contacts', contactRoutes);
 

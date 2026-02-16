@@ -13,7 +13,7 @@ export const authenticateUser = (req, res, next) => {
         next();
     } catch (error) {
         console.error("Error verifying token:", error);
-        res.status(401).json({ message: "Invalid or expired token" });
+        res.status(401).json({ success: false, message: "Invalid or expired token" });
     }
 };
 
@@ -21,7 +21,7 @@ export const authenticateUser = (req, res, next) => {
 export const authorizeRoles = (...allowedRoles) => {
     return (req, res, next) => {
         if (!req.user || !allowedRoles.includes(req.user.role)) {
-            return res.status(403).json({ message: "Forbidden: You do not have access to this resource" });
+            return res.status(403).json({ success: false, message: "Forbidden: You do not have access to this resource" });
         }
         next();
     };
