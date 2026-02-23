@@ -11,7 +11,7 @@ router.post("/login", loginUser);
 // Admin-only routes - require authentication + admin role
 router.get("/all", authenticateUser, isAdmin, getAllUsers);
 router.get("/:id", authenticateUser, isAdmin, getUserById);
-router.post("/", authenticateUser, isAdmin, createUser);
+router.post("/create", authenticateUser, isAdmin, createUser);
 router.put("/:id", authenticateUser, isAdmin, updateUser);
 router.delete("/:id", authenticateUser, isAdmin, deleteUser);
 
