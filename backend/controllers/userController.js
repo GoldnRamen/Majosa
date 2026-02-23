@@ -92,7 +92,7 @@ export const getUserById = async (req, res) => {
 // Update user
 export const updateUser = async (req, res) => {
     try {
-        const { firstName, lastName, email, phone } = req.body;
+        const { firstName, lastName, email, password, phone, role } = req.body;
         const user = await userModel.findById(req.params.id);
         if (!user) {
             return res.status(404).json({success: false, message: "User not found" });
@@ -101,6 +101,11 @@ export const updateUser = async (req, res) => {
         user.lastName = lastName || user.lastName;
         user.email = email || user.email;
         user.phone = phone || user.phone;
+        user.role = role || user.role;
+        if (password) {
+            const salt = await bcrypt.genSalt(10);
+            user.password = await bcrypt.hash(password, salt);
+        }
         await user.save();
         res.json({success: true, message: "User updated successfully" });
     } catch (error) {
@@ -145,11 +150,10 @@ export const createUser = async (req, res) => {
 // Delete user
 export const deleteUser = async (req, res) => {
     try {
-        const user = await userModel.findById(req.params.id);
+        const user = await userModel.findByIdAndDelete(req.params.id);
         if (!user) {
             return res.status(404).json({success: false, message: "User not found" });
         }
-        await user.remove();
         res.json({success: true, message: "User deleted successfully" });
     } catch (error) {
         console.error("Error deleting user:", error);

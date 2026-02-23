@@ -20,7 +20,7 @@ export default function Contact(){
       "addressRegion": "Abuja",
       "addressCountry": "NG"
     }
-  }
+  };
 
   return (
     <div className="mt-15 min-h-screen bg-linear-to-br from-cyan-50 to-white flex flex-col">

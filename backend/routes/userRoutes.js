@@ -12,7 +12,7 @@ router.post("/login", loginUser);
 router.get("/all", authenticateUser, isAdmin, getAllUsers);
 router.get("/:id", authenticateUser, isAdmin, getUserById);
 router.post("/create", authenticateUser, isAdmin, createUser);
-router.put("/:id", authenticateUser, isAdmin, updateUser);
-router.delete("/:id", authenticateUser, isAdmin, deleteUser);
+router.put("/edit/:id", authenticateUser, isAdmin, updateUser);
+router.delete("/delete/:id", authenticateUser, isAdmin, deleteUser);
 
 export default router;
