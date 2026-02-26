@@ -1,8 +1,9 @@
 import { CldImage } from 'next-cloudinary'
 import { MdOutlineClose } from "react-icons/md";
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import ProductList from './productList';
+import { BurgerContext } from '@/context/BurgerContext';
 
 export default function ProductsGrid(){
   const products = [
@@ -19,11 +20,13 @@ export default function ProductsGrid(){
   const router = useRouter();
   const hash = router.asPath.split("#")[1]; // extract the part after #
 
+  const {closeBtn, setCloseBtn} = useContext(BurgerContext)
+
   const handleCardClick = (p) => {
-  setSelectedId(p.name);
-  setSelectedName(p.name);
-    console.log(p.name);
-};
+    setSelectedId(p.name);
+    setSelectedName(p.name);
+      console.log(p.name);
+  };
 
 
   useEffect(() => {
@@ -65,13 +68,15 @@ export default function ProductsGrid(){
       </section>
       ):(
       <div className="text-black lg:p-6 p-1 rounded-xl shadow-2xl w-full h-fit relative animate-in fade-in zoom-in duration-300">
-        <button 
+        {closeBtn && (
+          <button 
           onClick={() => setSelectedId(null)}
-          className="absolute lg:top-4 top-10 right-4 bg-indigo-950 hover:bg-indigo-100 px-3 py-1 rounded z-30"
+          className="absolute lg:top-4 top-5 right-4 bg-indigo-950 hover:bg-indigo-100 px-3 py-1 rounded"
         >
           <MdOutlineClose className='text-white hover:text-red-900'/>
         </button>
-        <div className='z-20 relative'>
+        )}
+        <div className='z-20 relative'>                                 
             <ProductList selectedName={selectedName}/>
         </div>
       </div>     

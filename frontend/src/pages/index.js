@@ -10,6 +10,7 @@ import BubbleBackground from "@/components/BackgroundAnimation"
 import OrganicWave from "@/components/BackgroundAnimation"
 import RegularWave from "@/components/BackgroundAnimation"
 import FloatTab from "@/components/FloatTab"
+import BackToTop from "@/components/BackTop"
 
 export default function Home(){
   const sectors = [
@@ -20,8 +21,9 @@ export default function Home(){
 ]
 
   return (
-    <div className="min-h-screen flex flex-col mt-15 bg-cyan-50">
+    <div className="min-h-screen flex flex-col mt-15 bg-cyan-50">      
       <Header />
+      <BackToTop />
       <main className="flex-1">
         <FloatTab />
         <Hero />

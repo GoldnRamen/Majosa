@@ -6,9 +6,12 @@ import { CiHeart } from "react-icons/ci";
 import { FaHeart } from "react-icons/fa";
 import { CartContext } from '@/context/CartContext';
 
+import { IoMdCloseCircle, IoMdCloseCircleOutline } from "react-icons/io";
+import { BurgerContext } from '@/context/BurgerContext';
+
 export default function ProductList({selectedName}){
 const allProducts = [
-    {id: 'geo1', name: 'Majosa Geotechnical Investment Ltd', product: "Copper Ore", desc: 'We provide responsible, efficient, and sustainable mining operations that unlock the full potential of Africa’s natural resources.', img: "https://res.cloudinary.com/do2yiivip/video/upload/q_auto,f_auto/v1770979606/generated_video_c4xane.mp4", features: [ "Exploration", "Mining", "Borehole Drilling", "Geotechnical Engineering", "Geotechnical Survey & Consulting", "Mineral Export"], collage: ["a358022c-5196-42c8-8f63-e0a62f4b0b82_i7lq9q", "1842d7b7-1a75-448d-813a-f1dd34efd303_r9u7vh", "2baa2ca0-75f0-48fd-926a-6ae1696a562e_x6dwh8", "32a9896f-37cb-4d98-be47-9fcfa4895826_yf3aye", "49cf8411-d96f-4cc3-9e76-59aba141e706_vzprlc"], bgColor: "bg-slate-600" },
+    {id: 'geo1', name: 'Majosa Geotechnical Investment Ltd', product: "Copper Ore", desc: "Sourced from reliable vein and disseminated deposits in pegmatite-associated or schist belt areas. Mining typically involves artisanal open-pit or shallow underground methods. Key states include Kano, Nasarawa (Akiri, Azara areas), and Osun. Nasarawa's copper offerings stand out for their association with high-grade rare metal zones, often yielding purer chalcopyrite forms compared to more scattered deposits elsewhere.", img: "https://res.cloudinary.com/do2yiivip/video/upload/q_auto,f_auto/v1770979606/generated_video_c4xane.mp4", features: [ "Exploration", "Mining", "Borehole Drilling", "Geotechnical Engineering", "Geotechnical Survey & Consulting", "Mineral Export"], collage: ["a358022c-5196-42c8-8f63-e0a62f4b0b82_i7lq9q", "1842d7b7-1a75-448d-813a-f1dd34efd303_r9u7vh", "2baa2ca0-75f0-48fd-926a-6ae1696a562e_x6dwh8", "32a9896f-37cb-4d98-be47-9fcfa4895826_yf3aye", "49cf8411-d96f-4cc3-9e76-59aba141e706_vzprlc"], bgColor: "bg-slate-600" },
     {id: 'geo2', name: 'Majosa Geotechnical Investment Ltd', product: "Lithium", desc: 'We provide responsible, efficient, and sustainable mining operations that unlock the full potential of Africa’s natural resources.', img: "https://res.cloudinary.com/do2yiivip/video/upload/q_auto,f_auto/v1770981927/generated_video_1_whyrfw.mp4", features: [ "Exploration", "Mining", "Borehole Drilling", "Geotechnical Engineering", "Geotechnical Survey & Consulting", "Mineral Export"], collage: ["a358022c-5196-42c8-8f63-e0a62f4b0b82_i7lq9q", "1842d7b7-1a75-448d-813a-f1dd34efd303_r9u7vh", "2baa2ca0-75f0-48fd-926a-6ae1696a562e_x6dwh8", "32a9896f-37cb-4d98-be47-9fcfa4895826_yf3aye", "49cf8411-d96f-4cc3-9e76-59aba141e706_vzprlc"], bgColor: "bg-slate-600" },
     {id: 'geo3', name: 'Majosa Geotechnical Investment Ltd', product: "Iron Ore", desc: 'We provide responsible, efficient, and sustainable mining operations that unlock the full potential of Africa’s natural resources.', img: "https://res.cloudinary.com/do2yiivip/video/upload/q_auto,f_auto/v1770982330/generated_video_2_u7w53h.mp4", features: [ "Exploration", "Mining", "Borehole Drilling", "Geotechnical Engineering", "Geotechnical Survey & Consulting", "Mineral Export"], collage: ["a358022c-5196-42c8-8f63-e0a62f4b0b82_i7lq9q", "1842d7b7-1a75-448d-813a-f1dd34efd303_r9u7vh", "2baa2ca0-75f0-48fd-926a-6ae1696a562e_x6dwh8", "32a9896f-37cb-4d98-be47-9fcfa4895826_yf3aye", "49cf8411-d96f-4cc3-9e76-59aba141e706_vzprlc"], bgColor: "bg-slate-600" },
     {id: 'geo4', name: 'Majosa Geotechnical Investment Ltd', product: "Gold", desc: 'We provide responsible, efficient, and sustainable mining operations that unlock the full potential of Africa’s natural resources.', img: "https://res.cloudinary.com/do2yiivip/video/upload/q_auto,f_auto/v1770982589/generated_video_3_j6zsol.mp4", features: [ "Exploration", "Mining", "Borehole Drilling", "Geotechnical Engineering", "Geotechnical Survey & Consulting", "Mineral Export"], collage: ["a358022c-5196-42c8-8f63-e0a62f4b0b82_i7lq9q", "1842d7b7-1a75-448d-813a-f1dd34efd303_r9u7vh", "2baa2ca0-75f0-48fd-926a-6ae1696a562e_x6dwh8", "32a9896f-37cb-4d98-be47-9fcfa4895826_yf3aye", "49cf8411-d96f-4cc3-9e76-59aba141e706_vzprlc"], bgColor: "bg-slate-600" },
@@ -29,18 +32,26 @@ const allProducts = [
   ]
 
    const filteredItems = allProducts.filter(
-    (p) => p.name === selectedName
+    (p) => p.name === selectedName    
   );
+
   const [selectedId, setSelectedId] = useState(null);
-    const router = useRouter();
-    const hash = router.asPath.split("#")[1]; // extract the part after #
-    const { clicked, setClicked, hovMsg, setHovMsg } = useContext(CartContext)
+  const [selectedTitle, setSelectedTitle] = useState(null);
+  const [selectedMineral, setSelectedMineral] = useState(null);
+  const router = useRouter();
+  const hash = router.asPath.split("#")[1]; // extract the part after #
+  const { clicked, setClicked, hovMsg, setHovMsg } = useContext(CartContext)
   
+  const {closeBtn, setCloseBtn} = useContext(BurgerContext)
     useEffect(() => {
       if (router.query.select) {
         setSelectedId(router.query.select);
       }
     }, [router.query.select]);
+
+    const handleMineralClick = (min) => {
+      setSelectedMineral(min);
+    }
   
     function GalleryCarousel({ images, alts }) {
       const [index, setIndex] = useState(0);
@@ -96,12 +107,17 @@ const allProducts = [
   };
   return (
     <>          
+      {selectedMineral === null ? (
         <section className='mt-10 lg:mt-5 p-2'>
             <h1 className='w-[70%] lg:w-full text-xl mb-4'>{selectedName}</h1>
+            <div className='my-10'>
+              Majosa Group proudly sources its premium minerals from reliable deposits across Nigeria, with a strong emphasis on ethical, artisanal, and small-scale mining practices combined with verified exploration efforts. Many of these minerals occur in pegmatite formations (coarse-grained igneous rocks) or associated geological settings, often mined through open-pit, artisanal, or selective hard-rock methods in pegmatite belts.
+            </div>   
             <section id="products" className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3">
-                {filteredItems.map(p => (
-                <div key={p.id} className={`group relative border overflow-hidden rounded-2xl shadow shadow-black`}>
-                    <div className='h-64 w-full overflow-hidden'>                  
+                {filteredItems.map(min => (
+                <div key={min.id} className={`group relative border overflow-hidden rounded-2xl shadow shadow-black`}>
+                  
+                    <div className='h-64 w-full overflow-hidden'>                                     
                         <video
                         className="w-full h-full object-cover"    
                         autoPlay
@@ -110,12 +126,13 @@ const allProducts = [
                         playsInline
                         >
                         <source                                  
-                            src={p.img}
+                            src={min.img}
                             type="video/mp4"
                         />
                         </video>
-                        <div className={`absolute z-10 top-2 left-2 h-8 w-8 lg:h-12 lg:w-12 ${p.bgColor} rounded flex items-center justify-center font-semibold text-white`}>{p.name.split(' ')[1]?.slice(0,2) || 'MG'}</div>                
-                        <div
+                        <div className={`absolute z-10 top-2 left-2 h-8 w-8 lg:h-12 lg:w-12 ${min.bgColor} rounded flex items-center justify-center font-semibold text-white`}>{min.name.split(' ')[1]?.slice(0,2) || 'MG'}</div>                
+                        {/*Add To Cart */}
+                         {/*<div
                             key={p.id}
                             onClick={() => toggleLike(p.id)}
                             className="absolute z-10 top-2 right-2 h-8 w-8 rounded flex items-center justify-center cursor-pointer"
@@ -131,18 +148,53 @@ const allProducts = [
                                     {hovMsg[p.id] ? <div className='absolute z-30 top-9 right-2 text-sm w-28 bg-white rounded p-2'>Add to Cart</div> : null}
                                 </>
                             )}
-                        </div>                               
-                        
+                        </div>                                
+                        */}                        
                         <div className="absolute inset-x-0 bottom-0 backdrop-blur-md bg-white/20 lg:p-4 p-1">                        
                             <div className='relative flex justify-between items-center text-white'>
-                                <p className="h-fit w-fit p-2 justify-center font-semibold text-white lg:text-lg text-xs">{p.product}</p>                        
-                                <p className="p-1 rounded-lg border text-sm">$50</p>                                
+                                <p className="h-fit w-fit p-2 justify-center font-semibold text-white lg:text-lg text-xs cursor-pointer hover:underline"  onClick={() => {handleMineralClick(min); setCloseBtn(false)}}>{min.product}</p>                        
+                                {/* <p className="p-1 rounded-lg border text-xs cursor-pointer" onClick={() => {handleMineralClick(min); setCloseBtn(false)}}>View details</p>                                 */}
                             </div>
                         </div>
                     </div>
                 </div>
                 ))}
             </section>
-        </section>        
+        </section>    
+        ):(
+          <div className="text-black lg:p-6 p-1 rounded-xl shadow-2xl w-full h-fit relative animate-in fade-in zoom-in duration-300">            
+            <button 
+              onClick={() => setSelectedId(null)}
+              className="absolute lg:top-4 top-0 right-3 z-30 cursor-pointer text-indigo-950 hover:bg-indigo-100 px-3 py-1 rounded"
+            >
+              <MdOutlineClose className="text-indigo-950 hover:text-red-900 text-xl" onClick={() => {setSelectedMineral(null); setCloseBtn(true)}} />        
+            </button>            
+            {selectedMineral && (
+            <div className='z-20 relative'>
+                <div className='lg:grid lg:grid-cols-3 lg:gap-2'>  
+                  <h2 className="flex lg:justify-center lg:hidden">{selectedMineral.product}</h2>
+                  <div className='col-span-1'>
+                      <video
+                        className="w-full h-full object-cover"    
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        >
+                        <source                                  
+                            src={selectedMineral.img}
+                            type="video/mp4"
+                        />
+                      </video>
+                  </div>
+                  <div className='col-span-2 space-y-5'>
+                    <h2 className="lg:flex justify-center hidden">{selectedMineral.product}</h2>
+                    <p className='lg:mx-10 m-5'>{selectedMineral.desc}</p>
+                  </div>
+                </div>
+            </div>
+            )}
+          </div>     
+        )}
     </>
   )}

@@ -11,6 +11,10 @@ import { CartContext } from '@/context/CartContext';
 import Footer from './Footer';
 import CompaniesGrid from './CompaniesGrid';
 import ProductsGrid from './ProductsGrid';
+import OrderFloater from './OrderFloater';
+import BackToTop from './BackTop';
+import { BurgerContext } from '@/context/BurgerContext';
+import { FaEnvelope, FaPhoneVolume, FaWhatsapp } from 'react-icons/fa6';
 
 export default function AllProductGrid(){
   
@@ -19,7 +23,8 @@ export default function AllProductGrid(){
     const [activeImage, setActiveImage] = useState(0);
     const router = useRouter();
     const hash = router.asPath.split("#")[1]; // extract the part after #
-    const { clicked, setClicked, hovMsg, setHovMsg } = useContext(CartContext)
+    const { setClicked, setHovMsg, href, phoneNo, subject, isMobile } = useContext(CartContext)
+    const { closeBtn, setCloseBtn } = useContext(BurgerContext)
   
     
     const productPage = "/product";
@@ -96,12 +101,15 @@ export default function AllProductGrid(){
   return (
     <>
     <Header />
-        <div className="mt-15 min-h-screen bg-linear-to-br from-cyan-50 to-white flex flex-col">
-            <main className="flex-1 max-w-full lg:mx-20 px-2 py-12 space-y-8 text-cyan-950">
-                <h1 className="text-3xl font-bold px-3">Our Products</h1>
-                <ProductsGrid />
-            </main>
+        <div className="mt-15 min-h-screen bg-linear-to-br from-cyan-50 to-white flex flex-col relative">
+          <main className="flex-1 max-w-full lg:mx-20 px-2 py-12 space-y-8 text-cyan-950">
+              <h1 className="text-3xl font-bold px-3">Our Products</h1>
+              <ProductsGrid />
+          </main>
+          <OrderFloater />
+          <BackToTop />
         </div>
+        
     <Footer />
     </>
     
