@@ -29,7 +29,7 @@ export default function BackToTop (){
 
     return(
         visible && (
-            <div className='relative'>
+            <div className='relative text-white'>
                 <div onClick={scrollToTop}
                     className={`bg-cyan-900 animate-bounce fixed block bottom-20 z-30 right-10 opacity-95 rounded-lg p-1 items-center w-fit h-fit shadow-2xl 
                         transition-[margin,width] duration-1000 ease-in-out animated-slide-right cursor-pointer

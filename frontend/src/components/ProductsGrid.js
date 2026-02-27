@@ -7,14 +7,17 @@ import { BurgerContext } from '@/context/BurgerContext';
 
 export default function ProductsGrid(){
   const products = [
-    {id: 'geo', name: 'Majosa Geotechnical Investment Ltd', desc: 'We provide responsible, efficient, and sustainable mining operations that unlock the full potential of Africa’s natural resources.', img: "28d7e9a1-c9ef-4340-8610-6db1b7f9fdd9_wy13q1", features: [ "Exploration", "Mining", "Borehole Drilling", "Geotechnical Engineering", "Geotechnical Survey & Consulting", "Mineral Export"], collage: ["a358022c-5196-42c8-8f63-e0a62f4b0b82_i7lq9q", "1842d7b7-1a75-448d-813a-f1dd34efd303_r9u7vh", "2baa2ca0-75f0-48fd-926a-6ae1696a562e_x6dwh8", "32a9896f-37cb-4d98-be47-9fcfa4895826_yf3aye", "49cf8411-d96f-4cc3-9e76-59aba141e706_vzprlc"], bgColor: "bg-slate-600" },
-    {id: 'agro', name: 'Majosa Agrochemical Limited', desc: 'Driving food security through modern agriculture and rice processing. Our 24-ton-per-day rice mill supports Nigeria’s agricultural value chain, while our fertilizer and agrochemical services empower farmers nationwide.', img: "d0d2e546-da2c-473b-b2c3-228b659b153c_yoah5j", features: [ "Rice Farming & Processing", "Fertilizer & Agrochemical Sales", "Mechanized Farming"], collage: ["0ebe12b9-35b3-4e83-ae87-e272e6ab5ad9_bhcufs", "004f9437-c1bb-47fe-a93d-d929f4f4608b_xdkmcm", "52bffc29-3cc0-4262-89dd-29994e5364a5_rb8fmt"], bgColor: "bg-green-700" },
-    {id: 'global', name: 'Majosa Global Services Nig. Ltd', desc: 'We build infrastructure and deliver engineering excellence that supports national development.', img: "f9018f9c-ac22-470c-8aff-0ff288defde1_ywmdeu", features: [ "Civil & Structural Construction", "Real Estate Development", "Oil & Gas Support Services", "General Contracting"], collage: ["b0c7eaeb-fd62-4aea-ab8e-93ca6bf60f5a_ufxi3n", "145632f1-0d8e-4f69-8ed1-47a45d55d943_nezrsa", "3e317122-a42f-4331-8301-6e602ba90ce6_tetzjf", "ba1a4047-07a9-4a00-81a9-fa57826f65b0_gkuoiw"], bgColor: "bg-orange-500"},
-    {id: 'enterprise', name: 'Majosa Enterprise', desc: 'Your neighborhood supermarket and retail hub offering quality products at affordable prices.', img: "0b6f32ef-3f41-4996-b1d7-0d90d3273968_djtgri", features: ["Retail Supermarket", "General Merchandise & Distribution"], collage:["ba1a4047-07a9-4a00-81a9-fa57826f65b0_gkuoiw", "9853f9c0-8bc5-4c62-8054-03aaa4ef6257_f9nomh"], bgColor: "bg-lime-300"}
+    {id: 'geo', name: 'Majosa Geotechnical Investment Ltd', desc: 'Majosa Group proudly sources its premium minerals from reliable deposits across Nigeria, with a strong emphasis on ethical, artisanal, and small-scale mining practices combined with verified exploration efforts. Many of these minerals occur in pegmatite formations (coarse-grained igneous rocks) or associated geological settings, often mined through open-pit, artisanal, or selective hard-rock methods in pegmatite belts.', focus: "Solid Minerals, Mining, and Earth Sciences",  headline: "Powering the Global Energy Transition with Premium Mineral Assets", img: "28d7e9a1-c9ef-4340-8610-6db1b7f9fdd9_wy13q1", features: [ "Exploration", "Mining", "Borehole Drilling", "Geotechnical Engineering", "Geotechnical Survey & Consulting", "Mineral Export"], collage: ["a358022c-5196-42c8-8f63-e0a62f4b0b82_i7lq9q", "1842d7b7-1a75-448d-813a-f1dd34efd303_r9u7vh", "2baa2ca0-75f0-48fd-926a-6ae1696a562e_x6dwh8", "32a9896f-37cb-4d98-be47-9fcfa4895826_yf3aye", "49cf8411-d96f-4cc3-9e76-59aba141e706_vzprlc"], bgColor: "bg-slate-600" },
+    {id: 'agro', name: 'Majosa Agrochemical Limited', desc: 'Driving food security through modern agriculture and rice processing. Our 24-ton-per-day rice mill supports Nigeria’s agricultural value chain, while our fertilizer and agrochemical services empower farmers nationwide.', focus: "Crop Protection, Fertilizers, and Farm Productivity",  headline: "Empowering the African Farmer. Protecting the Future of Food.", img: "d0d2e546-da2c-473b-b2c3-228b659b153c_yoah5j", features: [ "Rice Farming & Processing", "Fertilizer & Agrochemical Sales", "Mechanized Farming"], collage: ["0ebe12b9-35b3-4e83-ae87-e272e6ab5ad9_bhcufs", "004f9437-c1bb-47fe-a93d-d929f4f4608b_xdkmcm", "52bffc29-3cc0-4262-89dd-29994e5364a5_rb8fmt"], bgColor: "bg-green-700" },
+    {id: 'global', name: 'Majosa Global Services Nig. Ltd', desc: 'We build infrastructure and deliver engineering excellence that supports national development.', focus: "Agro-Processing (Rice), Logistics, and International Trade",  headline: "Seamless Logistics. Premium Processing. Global Standards.", img: "f9018f9c-ac22-470c-8aff-0ff288defde1_ywmdeu", features: [ "Civil & Structural Construction", "Real Estate Development", "Oil & Gas Support Services", "General Contracting"], collage: ["b0c7eaeb-fd62-4aea-ab8e-93ca6bf60f5a_ufxi3n", "145632f1-0d8e-4f69-8ed1-47a45d55d943_nezrsa", "3e317122-a42f-4331-8301-6e602ba90ce6_tetzjf", "ba1a4047-07a9-4a00-81a9-fa57826f65b0_gkuoiw"], bgColor: "bg-orange-500"},
+    {id: 'enterprise', name: 'Majosa Enterprise', desc: 'Your neighborhood supermarket and retail hub offering quality products at affordable prices.', focus: "Retail, General Contracts, and Entrepreneurial Solutions",  headline: "Your Trusted Partner in General Commerce and Service Delivery.", img: "0b6f32ef-3f41-4996-b1d7-0d90d3273968_djtgri", features: ["Retail Supermarket", "General Merchandise & Distribution"], collage:["ba1a4047-07a9-4a00-81a9-fa57826f65b0_gkuoiw", "9853f9c0-8bc5-4c62-8054-03aaa4ef6257_f9nomh"], bgColor: "bg-lime-300"}
   ]
 
   const [selectedId, setSelectedId] = useState(null);
   const [selectedName, setSelectedName] = useState(null);
+  const [selectedDesc, setSelectedDesc] = useState(null);
+  const [selectedFocus, setSelectedFocus] = useState(null);
+  const [selectedHeadline, setSelectedHeadline] = useState(null);
   const activeCard = products.find(p => p.id === selectedId);
   const [activeImage, setActiveImage] = useState(0);
   const router = useRouter();
@@ -25,6 +28,9 @@ export default function ProductsGrid(){
   const handleCardClick = (p) => {
     setSelectedId(p.name);
     setSelectedName(p.name);
+    setSelectedDesc(p.desc);
+    setSelectedFocus(p.focus);
+    setSelectedHeadline(p.headline);
       console.log(p.name);
   };
 
@@ -67,7 +73,7 @@ export default function ProductsGrid(){
         ))}
       </section>
       ):(
-      <div className="text-black lg:p-6 p-1 rounded-xl shadow-2xl w-full h-fit relative animate-in fade-in zoom-in duration-300">
+      <div className="text-black lg:p-6 p-1 rounded-xl shadow-2xl w-full h-fit relative animate-in fade-in zoom-in duration-300 bg-indigo-50">
         {closeBtn && (
           <button 
           onClick={() => setSelectedId(null)}
@@ -77,10 +83,10 @@ export default function ProductsGrid(){
         </button>
         )}
         <div className='z-20 relative'>                                 
-            <ProductList selectedName={selectedName}/>
+            <ProductList selectedName={selectedName} selectedFocus={selectedFocus} selectedHeadline={selectedHeadline} selectedDesc={selectedDesc}/>
         </div>
       </div>     
-      )}
+      )}            
     </>
     
   )

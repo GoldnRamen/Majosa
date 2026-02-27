@@ -101,13 +101,11 @@ export default function AllProductGrid(){
   return (
     <>
     <Header />
-        <div className="mt-15 min-h-screen bg-linear-to-br from-cyan-50 to-white flex flex-col relative">
+        <div className="mt-15 min-h-screen bg-indigo-100 flex flex-col relative">
           <main className="flex-1 max-w-full lg:mx-20 px-2 py-12 space-y-8 text-cyan-950">
               <h1 className="text-3xl font-bold px-3">Our Products</h1>
               <ProductsGrid />
-          </main>
-          <OrderFloater />
-          <BackToTop />
+          </main>          
         </div>
         
     <Footer />

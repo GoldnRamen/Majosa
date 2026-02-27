@@ -5,7 +5,7 @@ export const CartContext = createContext()
 export const CartContextProvider = ({children}) => {
     const [clicked, setClicked] = useState({})
     const [hovMsg, setHovMsg] = useState({})
-    const phoneNo = "2347056849844"
+    const phoneNo = "2348063486544"
     const subject = "Product Inquiry - Majosa Group";
     const email = "meetmajosa@gmail.com";
     const body = "Hello, I'm interested in some product(s) or service(s) from Majosa Group Geotechnical Investment Limited.";
