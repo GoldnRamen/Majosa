@@ -1,4 +1,3 @@
-import { FaEllipsisVertical } from "react-icons/fa6";
 import { useRouter } from "next/router";
 import { FaFacebookF } from "react-icons/fa";
 import { GrLinkedinOption } from "react-icons/gr";
@@ -8,7 +7,7 @@ import { BsTwitterX } from "react-icons/bs";
 export default function Footer(){
   const router = useRouter()
   return (
-    <footer className={`${router.pathname === "/companies" ? "bg-yellow-700" : router.pathname === "/product" ? "bg-indigo-950" : "bg-linear-to-br from-cyan-950 to-cyan-100 border-t mt-12"}`}>
+    <footer className={`${router.pathname === "/companies" ? "bg-yellow-700" : router.pathname === "/product" ? "bg-indigo-950" : router.pathname === "/services" ? "bg-gray-950":  "bg-linear-to-br from-cyan-950 to-cyan-100 mt-12"} z-30`}>
       <div className="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="text-sm text-cyan-50">© {new Date().getFullYear()} Majosa Group. All rights reserved.</div>
         <div className="text-sm text-cyan-50">Suite A159, Worldgate Shopping Centre, Karu, Abuja | info@majosagroup.com</div>

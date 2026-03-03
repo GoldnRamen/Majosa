@@ -1,24 +1,19 @@
 import Header from "@/components/Header"
-import Image from "next/image"
 import { CldImage } from "next-cloudinary"
 import Footer from '@/components/Footer'
 import Hero from '@/components/Hero'
 import CompaniesGrid from '@/components/CompaniesGrid'
-import { useEffect, useState } from "react"
-import { useRouter } from "next/router"
-import BubbleBackground from "@/components/BackgroundAnimation"
-import OrganicWave from "@/components/BackgroundAnimation"
-import RegularWave from "@/components/BackgroundAnimation"
+import ScrollingWave from "@/components/BackgroundAnimation"
 import FloatTab from "@/components/FloatTab"
 import BackToTop from "@/components/BackTop"
 
 export default function Home(){
   const sectors = [
-  {id: 'mine', name: 'Mining', img: "machine-3037670_1280_uc2lzq"},
-  {id: 'agric', name: 'Agriculture', img: "dji-4223417_1280_uiglsz"},
-  {id: 'construct', name: 'Construction', img: "construction-site-2733678_1280_n93czx"},
-  {id: 'retail', name: 'Retail', img: "supermarket-4052658_1280_fuvhgf"}
-]
+    {id: 'mine', name: 'Mining', img: "machine-3037670_1280_uc2lzq"},
+    {id: 'agric', name: 'Agriculture', img: "dji-4223417_1280_uiglsz"},
+    {id: 'construct', name: 'Construction', img: "construction-site-2733678_1280_n93czx"},
+    {id: 'retail', name: 'Retail', img: "supermarket-4052658_1280_fuvhgf"}
+  ]
 
   return (
     <div className="min-h-screen flex flex-col mt-15 bg-cyan-50">      
@@ -30,7 +25,7 @@ export default function Home(){
         <div className="max-w-6xl mx-auto px-6 py-12 space-y-12 text-cyan-950">
           
           <section id="about" className="relative border-y-neutral-700 border-b p-2">
-            <RegularWave />
+            <ScrollingWave />
             <div className="lg:absolute space-y-4 top-10">
               <h2 className="text-2xl font-semibold">About Majosa Group</h2>
               <p className="">Majosa Group is headquartered in Abuja, Nigeria, and operates through four strong subsidiaries. We combine innovation, integrity, and excellence to create long-term value for our clients, partners, and the communities we serve.</p>

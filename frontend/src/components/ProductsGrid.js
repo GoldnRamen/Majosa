@@ -1,9 +1,13 @@
 import { CldImage } from 'next-cloudinary'
 import { MdOutlineClose } from "react-icons/md";
+import { FaChevronUp } from "react-icons/fa";
+import { FaChevronDown } from "react-icons/fa";
 import { useContext, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import ProductList from './productList';
 import { BurgerContext } from '@/context/BurgerContext';
+import MachineList from './machineList';
+import EquipmentList from './equipmentList';
 
 export default function ProductsGrid(){
   const products = [
@@ -18,22 +22,21 @@ export default function ProductsGrid(){
   const [selectedDesc, setSelectedDesc] = useState(null);
   const [selectedFocus, setSelectedFocus] = useState(null);
   const [selectedHeadline, setSelectedHeadline] = useState(null);
-  const activeCard = products.find(p => p.id === selectedId);
-  const [activeImage, setActiveImage] = useState(0);
+  const [viewMin, setViewMin] = useState(false)
+  const [viewMach, setViewMach] = useState(false)
+  const [viewEquip, setViewEquip] = useState(false)
   const router = useRouter();
   const hash = router.asPath.split("#")[1]; // extract the part after #
 
-  const {closeBtn, setCloseBtn} = useContext(BurgerContext)
+  const {closeBtn} = useContext(BurgerContext)
 
   const handleCardClick = (p) => {
     setSelectedId(p.name);
     setSelectedName(p.name);
     setSelectedDesc(p.desc);
     setSelectedFocus(p.focus);
-    setSelectedHeadline(p.headline);
-      console.log(p.name);
+    setSelectedHeadline(p.headline);      
   };
-
 
   useEffect(() => {
     if (router.query.select) {
@@ -49,45 +52,64 @@ export default function ProductsGrid(){
       }
     }
   }, [hash]);
+
   return (
     <>
-    {selectedId === null ? (
-      <section id="products" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {products.map(p => (
-          <div key={p.id} className={`group relative border overflow-hidden rounded-2xl shadow shadow-black`}>
-            <div className='h-64 w-full'>
-              <CldImage
-                src={p.img}
-                fill
-                sizes='100vw'
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-                alt='Picture not found'
-              />
-              <div className={`absolute z-10 top-2 left-2 h-12 w-12 ${p.bgColor} rounded flex items-center justify-center font-semibold text-white`}>{p.name.split(' ')[1]?.slice(0,2) || 'MG'}</div>
-              <div className="absolute z-10 top-20 left-10 right-5 h-fit w-fit p-2 justify-center font-semibold backdrop-blur-md bg-black/20 rounded text-white">{p.name}</div>
+      {selectedId === null ? (
+        <section id="products" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {products.map(p => (
+            <div key={p.id} className={`group relative border overflow-hidden rounded-2xl shadow shadow-black`}>
+              <div className='h-64 w-full'>
+                <CldImage
+                  src={p.img} fill sizes='100vw'
+                  className="object-cover transition-transform duration-700 group-hover:scale-105" alt='Picture not found'
+                />
+                <div className={`absolute z-10 top-2 left-2 h-12 w-12 ${p.bgColor} rounded flex items-center justify-center font-semibold text-white`}>{p.name.split(' ')[1]?.slice(0,2) || 'MG'}</div>
+                <div className="absolute z-10 top-20 left-10 right-5 h-fit w-fit p-2 justify-center font-semibold backdrop-blur-md bg-black/20 rounded text-white">{p.name}</div>
+              </div>
+              <div className="absolute inset-x-0 lg:bottom-0 bottom-20 translate-y-full lg:group-hover:translate-y-0 transition-all duration-500 backdrop-blur-md bg-white/20 p-4">            
+                <p className="text-white border border-white text-sm shadow-xl animate-pulse p-1 rounded hover:cursor-pointer w-fit" onClick={() => handleCardClick(p)}>All Products →</p>
+              </div>
             </div>
-            <div className="absolute inset-x-0 lg:bottom-0 bottom-20 translate-y-full lg:group-hover:translate-y-0 transition-all duration-500 backdrop-blur-md bg-white/20 p-4">            
-              <p className="text-white border border-white text-sm shadow-xl animate-pulse p-1 rounded hover:cursor-pointer w-fit" onClick={() => handleCardClick(p)}>All Products →</p>
-            </div>
-          </div>
-        ))}
-      </section>
+          ))}
+        </section>
       ):(
-      <div className="text-black lg:p-6 p-1 rounded-xl shadow-2xl w-full h-fit relative animate-in fade-in zoom-in duration-300 bg-indigo-50">
-        {closeBtn && (
-          <button 
-          onClick={() => setSelectedId(null)}
-          className="absolute lg:top-4 top-5 right-4 bg-indigo-950 hover:bg-indigo-100 px-3 py-1 rounded"
-        >
-          <MdOutlineClose className='text-white hover:text-red-900'/>
-        </button>
-        )}
-        <div className='z-20 relative'>                                 
-            <ProductList selectedName={selectedName} selectedFocus={selectedFocus} selectedHeadline={selectedHeadline} selectedDesc={selectedDesc}/>
-        </div>
-      </div>     
+        <div className="text-black lg:p-6 p-1 rounded-xl shadow-2xl w-full h-fit relative animate-in fade-in zoom-in duration-300 bg-indigo-50">
+          {closeBtn && (
+            <button 
+              onClick={() => setSelectedId(null)}
+              className="absolute lg:top-4 top-5 right-4 bg-indigo-950 hover:bg-indigo-100 px-3 py-1 rounded"
+            >
+              <MdOutlineClose className='text-white hover:text-red-900'/>
+            </button>
+          )}
+            <div className='z-20 relative p-3'>       
+              <div className='flex-1 space-y-0 leading-0 text-cyan-950'>
+                <h1 className='w-[70%] lg:w-full text-xl font-extrabold'>{selectedName}</h1>
+                <h3 className='text-sm font-semibold italic'>{selectedHeadline}</h3>  
+              </div>
+              <div className='my-10'>
+                <div className='flex space-x-2 my-5 text-sm'>                
+                  <h2 className='font-semibold'>Our Focus: </h2>  
+                  <h3>{selectedFocus}</h3>                                      
+                </div>              
+                <h3>{selectedDesc}</h3>            
+              </div> 
+                <p className='flex justify-between p-3 border-b bg-indigo-200 rounded-t-lg cursor-pointer items-center' onClick={()=>{setViewMin(prev=>!prev); setViewMach(false); setViewEquip(false)}}> Minerals {viewMin ? <FaChevronUp  onClick={()=>{setViewMin(false)}}/> : <FaChevronDown  onClick={()=>{setViewMin(true)}}/> } </p>
+                { viewMin && (
+                  <ProductList selectedName={selectedName} selectedFocus={selectedFocus} selectedHeadline={selectedHeadline} selectedDesc={selectedDesc}/>
+                )}
+                <p className='flex justify-between p-3 border-b bg-indigo-200 rounded-t-lg cursor-pointer items-center' onClick={()=>{setViewMach(prev=>!prev); setViewMin(false); setViewEquip(false)}}> Heavy Duty Machines {viewMach ? <FaChevronUp  onClick={()=>{setViewMach(false)}}/> : <FaChevronDown  onClick={()=>{setViewMach(true)}}/> } </p>
+                { viewMach && (
+                  <MachineList selectedName={selectedName} selectedFocus={selectedFocus} selectedHeadline={selectedHeadline} selectedDesc={selectedDesc}/>
+                )}
+                <p className='flex justify-between p-3 border-b bg-indigo-200 rounded-t-lg cursor-pointer items-center' onClick={()=>{setViewEquip(prev=>!prev); setViewMin(false); setViewMach(false)}}> Equipment {viewMach ? <FaChevronUp  onClick={()=>{setViewMach(false)}}/> : <FaChevronDown  onClick={()=>{setViewMach(true)}}/> } </p>
+                { viewEquip && (
+                  <EquipmentList selectedName={selectedName} selectedFocus={selectedFocus} selectedHeadline={selectedHeadline} selectedDesc={selectedDesc}/>
+                )}
+            </div>
+        </div>     
       )}            
-    </>
-    
+    </>    
   )
 }

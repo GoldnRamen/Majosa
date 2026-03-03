@@ -3,7 +3,6 @@ import Footer from '../components/Footer'
 import ContactForm from '../components/ContactForm'
 
 import Head from 'next/head';
-import { CldImage } from 'next-cloudinary';
 import { SiGmail } from "react-icons/si";
 import { GiPhone } from "react-icons/gi";
 import { FaLocationDot } from "react-icons/fa6";
@@ -35,34 +34,34 @@ export default function Contact(){
             </div>
           </div>
           <div className='lg:hidden flex-1 mt-4'>
-                <div className="w-full text-cyan-900 flex flex-col justify-start">
-                  <div className='space-y-3 rounded backdrop-blur-md bg-black/10 space-x-1'>
-                    <div className='p-2 flex border-b relative'>
-                      <div className='flex flex-col space-y-12 border-r border-dotted px-2'>
-                        <FaLocationDot className='text-2xl'/>      
-                        <SiGmail className='text-2xl'/>        
-                        <GiPhone className='text-2xl'/>    
-                      </div>
-                      <div className=' space-y-3'>
-                        <div className='flex items-start p-1 space-x-2 mx-1 w-fit'>      
-                          <p className="text-xs font-semibold">Corporate Headquarters: Suite A159, Worldgate Shopping Centre, Karu, Abuja, Nigeria</p>
-                          </div>            
-                          <div className='flex items-end p-1 space-x-2 hover:underline cursor-pointer hover:bg-white hover:text-cyan-900 hover:rounded mx-1 w-fit absolute bottom-16'>    
-                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=meetmajosa@gmail.com" target="_blank" rel="noopener noreferrer" className="text-xs font-semibold">info@majosagroup.com</a>
-                          </div>            
-                          <div className='flex items-end p-1 space-x-2 mx-1 w-fit absolute bottom-2'>        
-                            <p className="mt-2 text-xs font-semibold">+2347056849844</p>
-                          </div> 
-                      </div>
-                    </div>
+            <div className="w-full text-cyan-900 flex flex-col justify-start">
+              <div className='space-y-3 rounded backdrop-blur-md bg-black/10 space-x-1'>
+                <div className='p-2 flex border-b relative'>
+                  <div className='flex flex-col space-y-12 border-r border-dotted px-2'>
+                    <FaLocationDot className='text-2xl'/>      
+                    <SiGmail className='text-2xl'/>        
+                    <GiPhone className='text-2xl'/>    
                   </div>
-                </div>  
-                <div className="p-4 bg-cyan-950 flex justify-center items-center">
-                  <a href="https://maps.google.com/?cid=6294312982886394801&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" className="flex gap-2 bg-cyan-100 cursor-pointer text-slate-950 px-4 py-2 rounded-lg font-bold text-sm hover:bg-cyan-50 transition-colors items-center">
-                    <BiCurrentLocation /> Location in Map
-                  </a>
-                </div>                 
+                  <div className=' space-y-3'>
+                    <div className='flex items-start p-1 space-x-2 mx-1 w-fit'>      
+                      <p className="text-xs font-semibold">Corporate Headquarters: Suite A159, Worldgate Shopping Centre, Karu, Abuja, Nigeria</p>
+                      </div>            
+                      <div className='flex items-end p-1 space-x-2 hover:underline cursor-pointer hover:bg-white hover:text-cyan-900 hover:rounded mx-1 w-fit absolute bottom-16'>    
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=meetmajosa@gmail.com" target="_blank" rel="noopener noreferrer" className="text-xs font-semibold">info@majosagroup.com</a>
+                      </div>            
+                      <div className='flex items-end p-1 space-x-2 mx-1 w-fit absolute bottom-2'>        
+                        <p className="mt-2 text-xs font-semibold">+2347056849844</p>
+                      </div> 
+                  </div>
+                </div>
               </div>
+            </div>  
+            <div className="p-4 bg-cyan-950 flex justify-center items-center">
+              <a href="https://maps.google.com/?cid=6294312982886394801&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" className="flex gap-2 bg-cyan-100 cursor-pointer text-slate-950 px-4 py-2 rounded-lg font-bold text-sm hover:bg-cyan-50 transition-colors items-center">
+                <BiCurrentLocation /> Location in Map
+              </a>
+            </div>                 
+          </div>
         </div>
         <div className='col-span-3 hidden lg:block'>
           <Head>
@@ -106,8 +105,7 @@ export default function Contact(){
               </div>  
           </div>
         </div>
-      </main>
-      
+      </main>      
       <Footer />
     </div>
   )

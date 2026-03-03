@@ -4,7 +4,6 @@ import { useContext } from 'react';
 import { CiMenuBurger } from "react-icons/ci";
 import { TfiClose } from "react-icons/tfi";
 import { useRouter } from 'next/router';
-import { FaShoppingCart } from "react-icons/fa";
 import { IoStorefront } from "react-icons/io5";
 
 export default function Header() {
@@ -14,11 +13,11 @@ export default function Header() {
   }
   const router = useRouter()
   return (
-    <header className={`${router.pathname === "/companies" ? "bg-yellow-700" : router.pathname === "/product" ? "bg-indigo-950" : "bg-linear-to-br from-cyan-950 to-cyan-100"} shadow-sm fixed top-0 left-0 right-0 h-20 z-50`}>
+    <header className={`${router.pathname === "/companies" ? "bg-yellow-700" : router.pathname === "/product" ? "bg-indigo-950" : router.pathname === "/services" ? "bg-gray-950" : "bg-linear-to-br from-cyan-950 to-cyan-100"} shadow-sm fixed top-0 left-0 right-0 h-20 z-50`}>
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <div className="flex items-center space-x-3">
           <div className='w-12 h-12 bg-white rounded-full'>
-            <div className={`w-10 h-10 bg-linear-to-br from-white ${router.pathname === "/companies" ? "to-yellow-900" : router.pathname === "/product" ? "to-indigo-950" : "to-cyan-900"} rounded-full flex items-center justify-center text-white font-bold`}></div>
+            <div className={`w-10 h-10 bg-linear-to-br from-white ${router.pathname === "/companies" ? "to-yellow-900" : router.pathname === "/product" ? "to-indigo-950" : router.pathname === "/services" ? "bg-gray-950" : "to-cyan-900"} rounded-full flex items-center justify-center text-white font-bold`}></div>
           </div>
           <div>
             <h1 className="text-lg font-semibold text-white">Majosa Group</h1>
@@ -50,7 +49,7 @@ export default function Header() {
             <Link href="/contact" className="smallNav max-w-full">Contact</Link>            
             <Link href="/product" className="hover:underline flex items-center"><p className='text-sm'>Shop</p> <IoStorefront className={`${router.pathname != "/" ? "text-white" : ""} text-cyan-900 text-lg`} /></Link>
           </nav>   
-      </div>
+        </div>
       )}
     </header>
   )

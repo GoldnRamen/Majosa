@@ -1,12 +1,7 @@
-import Link from 'next/link'
 import { CldImage } from 'next-cloudinary'
-import { MdOutlineClose } from "react-icons/md";
 import { useContext, useEffect, useState } from 'react';
-import Image from 'next/image';
 import { useRouter } from 'next/router';
 import Header from '@/components/Header';
-import { CiHeart } from "react-icons/ci";
-import { FaHeart } from "react-icons/fa";
 import { CartContext } from '@/context/CartContext';
 import AllProductGrid from '@/components/productSample';
 
@@ -18,27 +13,12 @@ export default function ProductGrid(){
     {id: 'enterprise', name: 'Majosa Enterprise', desc: 'Your neighborhood supermarket and retail hub offering quality products at affordable prices.', img: "0b6f32ef-3f41-4996-b1d7-0d90d3273968_djtgri", features: ["Retail Supermarket", "General Merchandise & Distribution"], collage:["ba1a4047-07a9-4a00-81a9-fa57826f65b0_gkuoiw", "9853f9c0-8bc5-4c62-8054-03aaa4ef6257_f9nomh"], bgColor: "bg-lime-300"}
   ]
 
-  const [selectedId, setSelectedId] = useState(null);
-  const activeCard = products.find(c => c.id === selectedId);
-  const [activeImage, setActiveImage] = useState(0);
   const router = useRouter();
-  const hash = router.asPath.split("#")[1]; // extract the part after #
-  const { clicked, setClicked, hovMsg, setHovMsg } = useContext(CartContext)
+  const hash = router.asPath.split("#")[1];
+  const { setClicked, setHovMsg } = useContext(CartContext)
 
   
-  const productDetailPage = "/product";
-  const handleCardClick = (id) => {
-    if (router.pathname !== productDetailPage) {
-      router.push({
-        pathname: productDetailPage,
-        query: { select: id },
-      });
-      return;
-    }
-
-    setSelectedId(id);
-  };
-
+   
   useEffect(() => {
     if (router.query.select) {
       setSelectedId(router.query.select);

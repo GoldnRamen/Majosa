@@ -1,8 +1,6 @@
-import Link from 'next/link'
 import { CldImage } from 'next-cloudinary'
 import { MdOutlineClose } from "react-icons/md";
 import { useEffect, useState } from 'react';
-import Image from 'next/image';
 import { useRouter } from 'next/router';
 
 export default function CompaniesGrid(){
@@ -15,10 +13,8 @@ export default function CompaniesGrid(){
 
   const [selectedId, setSelectedId] = useState(null);
   const activeCard = companies.find(c => c.id === selectedId);
-  const [activeImage, setActiveImage] = useState(0);
   const router = useRouter();
-  const hash = router.asPath.split("#")[1]; // extract the part after #
-
+  const hash = router.asPath.split("#")[1];
   
   const companyDetailPage = "/companies";
   const handleCardClick = (id) => {
@@ -41,16 +37,15 @@ export default function CompaniesGrid(){
 
   function GalleryCarousel({ images, alts }) {
     const [index, setIndex] = useState(0);
-
-    // Auto-rotate images
+    
     useEffect(() => {
       if (!images.length) return;
 
       const interval = setInterval(() => {
         setIndex((prev) => (prev + 1) % images.length);
-      }, 4000); // 4s per slide
+      }, 4000);
 
-      return () => clearInterval(interval); // cleanup on unmount
+      return () => clearInterval(interval);
     }, [images]);
 
     if (!images.length) return null;
@@ -61,8 +56,7 @@ export default function CompaniesGrid(){
           src={images[index]}
           alt="Image Not Available"
           fill
-          className="object-cover rounded-2xl w-full h-full"
-          // sizes="100vw"
+          className="object-cover rounded-2xl w-full h-full"          
         />
       </div>
     );
@@ -76,6 +70,7 @@ export default function CompaniesGrid(){
       }
     }
   }, [hash]);
+
   return (
     <>
     {selectedId === null ? (
@@ -109,8 +104,7 @@ export default function CompaniesGrid(){
           <MdOutlineClose className='text-white hover:text-red-900'/>
         </button>
         <div className='z-20 relative h-full'>
-          <div className='text-center backdrop-blur-md backdrop-brightness-100 p-1 mx-auto w-fit rounded-xl'>
-            {/* <p className="text-lg text-gray-800 font-bold">{activeCard.desc}</p>bg-linear-to-r from-cyan-950 via-gray-900 to-cyan-900 bg-clip-text text-transparent */}
+          <div className='text-center backdrop-blur-md backdrop-brightness-100 p-1 mx-auto w-fit rounded-xl'>            
           </div>
           <div className={`mt-5 lg:p-4 p-1 bg-linear-to-tl from-yellow-950 via-white to-white rounded lg:h-[80vh] h-fit relative grid lg:grid-cols-5 gap-3`}>
             <div className='lg:row-span-1 text-center lg:hidden block mt-10 lg:mt-0'><h1 className="lg:text-2xl text-center font-bold">{activeCard.name}</h1> <hr class="border-t border-gray-400 w-1/2 mx-auto" /></div>
@@ -133,18 +127,14 @@ export default function CompaniesGrid(){
                         <li key={index} className="marker:text-yellow-950 hover:marker:text-white transition marker:text-3xl text-sm">{feat}</li>
                       ))}
                     </ul>
-                  )}
-                  {/* <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-12 bg-linear-to-t from-white to-white/0"></div> */}
+                  )}            
                 </div>
               </div>
-            </div>
-
-           
+            </div>           
           </div>
         </div>
       </div>     
       )}
     </>
-    
   )
 }

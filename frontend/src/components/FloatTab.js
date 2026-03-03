@@ -1,22 +1,21 @@
 import Link from 'next/link';
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function FloatTab (){
     const [shrink, setShrink] = useState(false);
 
     useEffect(() => {
         const timer = setTimeout(() => {
-        setShrink(true); // shrink after 5 seconds
+        setShrink(true);
         }, 4000);
         return () => clearTimeout(timer);
     }, []);
 
     return(
         <div className='relative hidden lg:block'>
-            <div
-                className={`bg-gray-700 fixed block top-15 z-50 lg:-left-32 left-3 lg:-right-10 opacity-95 rounded-full p-1 items-center w-10 shadow-2xl 
-                    transition-[margin,width] duration-1000 ease-in-out animated-slide-right
-                    ${shrink ? 'lg:ml-[550px] lg:w-[calc(100%-550px)]' : 'lg:animated-slide-right'}`}>
+            <div className={`bg-gray-700 fixed block top-15 z-50 lg:-left-32 left-3 lg:-right-10 opacity-95 rounded-full p-1 items-center w-10 shadow-2xl 
+                transition-[margin,width] duration-1000 ease-in-out animated-slide-right
+                ${shrink ? 'lg:ml-[550px] lg:w-[calc(100%-550px)]' : 'lg:animated-slide-right'}`}>
                 <div className={`bg-linear-to-br from-cyan-600 via-gray-950 to-cyan-800 p-1 lg:p-0 rounded-full px-1`}>
                     <div className="p-1 lg:p-0 opacity-100 lg:mx-10 grid grid-cols-7 items-center">
                         <div className="hidden lg:flex gap-3 items-center text-xs col-span-3 lobster">
