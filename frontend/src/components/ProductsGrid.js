@@ -67,7 +67,7 @@ export default function ProductsGrid(){
                 <div className={`absolute z-10 top-2 left-2 h-12 w-12 ${p.bgColor} rounded flex items-center justify-center font-semibold text-white`}>{p.name.split(' ')[1]?.slice(0,2) || 'MG'}</div>
                 <div className="absolute z-10 top-20 left-10 right-5 h-fit w-fit p-2 justify-center font-semibold backdrop-blur-md bg-black/20 rounded text-white">{p.name}</div>
               </div>
-              <div className="absolute inset-x-0 lg:bottom-0 bottom-20 translate-y-full lg:group-hover:translate-y-0 transition-all duration-500 backdrop-blur-md bg-white/20 p-4">            
+              <div className="absolute inset-x-0 lg:bottom-0 bottom-20 h-full lg:h-fit translate-y-full lg:group-hover:translate-y-0 transition-all duration-500 backdrop-blur-md bg-white/20 p-4">            
                 <p className="text-white border border-white text-sm shadow-xl animate-pulse p-1 rounded hover:cursor-pointer w-fit" onClick={() => handleCardClick(p)}>All Products →</p>
               </div>
             </div>
@@ -78,7 +78,7 @@ export default function ProductsGrid(){
           {closeBtn && (
             <button 
               onClick={() => setSelectedId(null)}
-              className="absolute lg:top-4 top-5 right-4 bg-indigo-950 hover:bg-indigo-100 px-3 py-1 rounded"
+              className="absolute lg:top-4 top-5 cursor-pointer right-4 bg-indigo-950 z-30 hover:bg-indigo-100 px-3 py-1 rounded"
             >
               <MdOutlineClose className='text-white hover:text-red-900'/>
             </button>
@@ -89,24 +89,34 @@ export default function ProductsGrid(){
                 <h3 className='text-sm font-semibold italic'>{selectedHeadline}</h3>  
               </div>
               <div className='my-10'>
-                <div className='flex space-x-2 my-5 text-sm'>                
+                <div className='flex space-y-2 bg-linear-to-r from-white via-white to-transparent border-l-3 p-1 border-l-indigo-400 w-fit rounded-lg flex-col lg:flex-row space-x-2 my-5 text-sm'>                
                   <h2 className='font-semibold'>Our Focus: </h2>  
                   <h3>{selectedFocus}</h3>                                      
                 </div>              
                 <h3>{selectedDesc}</h3>            
               </div> 
-                <p className='flex justify-between p-3 border-b bg-indigo-200 rounded-t-lg cursor-pointer items-center' onClick={()=>{setViewMin(prev=>!prev); setViewMach(false); setViewEquip(false)}}> Minerals {viewMin ? <FaChevronUp  onClick={()=>{setViewMin(false)}}/> : <FaChevronDown  onClick={()=>{setViewMin(true)}}/> } </p>
-                { viewMin && (
-                  <ProductList selectedName={selectedName} selectedFocus={selectedFocus} selectedHeadline={selectedHeadline} selectedDesc={selectedDesc}/>
-                )}
-                <p className='flex justify-between p-3 border-b bg-indigo-200 rounded-t-lg cursor-pointer items-center' onClick={()=>{setViewMach(prev=>!prev); setViewMin(false); setViewEquip(false)}}> Heavy Duty Machines {viewMach ? <FaChevronUp  onClick={()=>{setViewMach(false)}}/> : <FaChevronDown  onClick={()=>{setViewMach(true)}}/> } </p>
-                { viewMach && (
-                  <MachineList selectedName={selectedName} selectedFocus={selectedFocus} selectedHeadline={selectedHeadline} selectedDesc={selectedDesc}/>
-                )}
-                <p className='flex justify-between p-3 border-b bg-indigo-200 rounded-t-lg cursor-pointer items-center' onClick={()=>{setViewEquip(prev=>!prev); setViewMin(false); setViewMach(false)}}> Equipment {viewMach ? <FaChevronUp  onClick={()=>{setViewMach(false)}}/> : <FaChevronDown  onClick={()=>{setViewMach(true)}}/> } </p>
-                { viewEquip && (
-                  <EquipmentList selectedName={selectedName} selectedFocus={selectedFocus} selectedHeadline={selectedHeadline} selectedDesc={selectedDesc}/>
-                )}
+              {
+                selectedName === "Majosa Geotechnical Investment Ltd" ?
+                (
+                  <div>
+                  <p className='flex justify-between p-3 border-b border-indigo-500 bg-indigo-200 rounded-t-lg cursor-pointer items-center' onClick={()=>{setViewMin(prev=>!prev); setViewMach(false); setViewEquip(false)}}> Minerals {viewMin ? <FaChevronUp  onClick={()=>{setViewMin(false)}}/> : <FaChevronDown  onClick={()=>{setViewMin(true)}}/> } </p>
+                  { viewMin && (
+                    <ProductList selectedName={selectedName} selectedFocus={selectedFocus} selectedHeadline={selectedHeadline} selectedDesc={selectedDesc}/>
+                  )}
+                  <p className='flex justify-between p-3 border-b border-indigo-500 bg-indigo-200 rounded-t-lg cursor-pointer items-center' onClick={()=>{setViewMach(prev=>!prev); setViewMin(false); setViewEquip(false)}}> Heavy Duty Machines {viewMach ? <FaChevronUp  onClick={()=>{setViewMach(false)}}/> : <FaChevronDown  onClick={()=>{setViewMach(true)}}/> } </p>
+                  { viewMach && (
+                    <MachineList selectedName={selectedName} selectedFocus={selectedFocus} selectedHeadline={selectedHeadline} selectedDesc={selectedDesc}/>
+                  )}
+                  <p className='flex justify-between p-3 border-b border-indigo-500 bg-indigo-200 rounded-t-lg cursor-pointer items-center' onClick={()=>{setViewEquip(prev=>!prev); setViewMin(false); setViewMach(false)}}> Equipment {viewMach ? <FaChevronUp  onClick={()=>{setViewMach(false)}}/> : <FaChevronDown  onClick={()=>{setViewMach(true)}}/> } </p>
+                  { viewEquip && (
+                    <EquipmentList selectedName={selectedName} selectedFocus={selectedFocus} selectedHeadline={selectedHeadline} selectedDesc={selectedDesc}/>
+                  )}
+                </div>
+                ):
+                (
+                  <div>Coming Soon</div>
+                )
+              }              
             </div>
         </div>     
       )}            
