@@ -88,7 +88,7 @@ const allProducts = [
         <section className='mt-10 lg:mt-5 p-2'>          
           <section id="products" className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3">
               {filteredItems.map(min => (
-              <div key={min.id} className={`group relative border overflow-hidden rounded-2xl shadow shadow-black`}>
+              <div key={min.id} className={`group relative border overflow-hidden rounded-t-2xl shadow shadow-black`}>
                 
                   <div className='h-64 w-full overflow-hidden'>                                     
                       <video className="w-full h-full object-cover" autoPlay loop muted playsInline>
@@ -106,7 +106,7 @@ const allProducts = [
             </section>
           </section>    
         ):(
-          <div className="text-black rounded-xl shadow-2xl w-full h-fit relative animate-in fade-in zoom-in duration-300 bg-gray-400">            
+          <div className="text-black shadow-2xl w-full h-fit relative animate-in fade-in zoom-in duration-300 bg-indigo-100">            
             <button onClick={() => setSelectedId(null)}
               className="absolute lg:top-4 top-3 right-3 z-30 cursor-pointer text-indigo-950 hover:bg-indigo-100 px-3 py-1 rounded"
             >

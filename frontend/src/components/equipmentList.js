@@ -5,7 +5,7 @@ import { BurgerContext } from '@/context/BurgerContext';
 import OrderFloater from './OrderFloater';
 import BackToTop from './BackTop';
 
-export default function EquipmentList({selectedName, selectedDesc, selectedFocus, selectedHeadline}){
+export default function EquipmentList({selectedName}){
 const allMachines = [
   {id: 'geo13', name: 'Majosa Geotechnical Investment Ltd', product: "Excavators", desc: "Sourced from reliable vein and disseminated deposits in pegmatite-associated or schist belt areas. Mining typically involves artisanal open-pit or shallow underground methods. Key states include Kano, Nasarawa (Akiri, Azara areas), and Osun. Nasarawa's copper offerings stand out for their association with high-grade rare metal zones, often yielding purer chalcopyrite forms compared to more scattered deposits elsewhere.", img: "https://res.cloudinary.com/do2yiivip/video/upload/q_auto,f_auto/v1772544998/generated_video_13_ot2htw.mp4", features: [ "Exploration", "Mining", "Borehole Drilling", "Geotechnical Engineering", "Geotechnical Survey & Consulting", "Mineral Export"], collage: ["a358022c-5196-42c8-8f63-e0a62f4b0b82_i7lq9q", "1842d7b7-1a75-448d-813a-f1dd34efd303_r9u7vh", "2baa2ca0-75f0-48fd-926a-6ae1696a562e_x6dwh8", "32a9896f-37cb-4d98-be47-9fcfa4895826_yf3aye", "49cf8411-d96f-4cc3-9e76-59aba141e706_vzprlc"], bgColor: "bg-slate-600" },
   {id: 'geo14', name: 'Majosa Geotechnical Investment Ltd', product: "Wagon Driller", desc: "Extracted from hard-rock pegmatites via open-pit and artisanal mining, targeting coarse spodumene crystals. Primary states: Nasarawa, Plateau, Kaduna, Oyo, Kogi, and Kwara (where spodumene often dominates). Nasarawa's spodumene frequently shows high Li₂O grades and co-occurs with other valuables, making it competitive or superior in quality and recovery potential to southwestern deposits (e.g., Oyo/Kwara).", img: "https://res.cloudinary.com/do2yiivip/video/upload/q_auto,f_auto/v1770981927/generated_video_1_whyrfw.mp4", features: [ "Exploration", "Mining", "Borehole Drilling", "Geotechnical Engineering", "Geotechnical Survey & Consulting", "Mineral Export"], collage: ["a358022c-5196-42c8-8f63-e0a62f4b0b82_i7lq9q", "1842d7b7-1a75-448d-813a-f1dd34efd303_r9u7vh", "2baa2ca0-75f0-48fd-926a-6ae1696a562e_x6dwh8", "32a9896f-37cb-4d98-be47-9fcfa4895826_yf3aye", "49cf8411-d96f-4cc3-9e76-59aba141e706_vzprlc"], bgColor: "bg-slate-600" },
@@ -49,7 +49,7 @@ const allMachines = [
         <section className='mt-10 lg:mt-5 p-2'>          
           <section id="products" className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3">
               {filteredItems.map(min => (
-              <div key={min.id} className={`group relative border overflow-hidden rounded-2xl shadow shadow-black`}>
+              <div key={min.id} className={`group relative border overflow-hidden rounded-t-2xl shadow shadow-black`}>
                 
                   <div className='h-64 w-full overflow-hidden'>                                     
                       <video className="w-full h-full object-cover" autoPlay loop muted playsInline>
@@ -67,7 +67,7 @@ const allMachines = [
             </section>
           </section>    
         ):(
-          <div className="text-black rounded-xl shadow-2xl w-full h-fit relative animate-in fade-in zoom-in duration-300 bg-gray-400">            
+          <div className="text-black shadow-2xl w-full h-fit relative animate-in fade-in zoom-in duration-300 bg-indigo-100">            
             <button onClick={() => setSelectedId(null)}
               className="absolute lg:top-4 top-3 right-3 z-30 cursor-pointer text-indigo-950 hover:bg-indigo-100 px-3 py-1 rounded"
             >

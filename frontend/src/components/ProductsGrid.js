@@ -114,7 +114,7 @@ export default function ProductsGrid(){
                 </div>
                 ):
                 (
-                  <div>Coming Soon</div>
+                  <div className='relative w-full h-full flex mx-auto justify-center'><CldImage src='acpzhs8fjcwxowyvnva1' className='rounded' height={500} width={500} /></div>
                 )
               }              
             </div>
