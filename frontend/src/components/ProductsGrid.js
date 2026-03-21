@@ -66,7 +66,7 @@ export default function ProductsGrid(){
                 />
                 <div className='absolute z-10 text-center p-2 flex'>
                   <div className={` ${p.bgColor} rounded rounded-r-none p-4 flex items-center justify-center font-semibold text-white`}>{p.name.split(' ')[1]?.slice(0,2) || 'MG'}</div>
-                  <div className=" p-2 justify-center font-semibold backdrop-blur-md bg-black/20 rounded rounded-l-none text-white text-sm">{p.name}</div>
+                  <div className=" p-2 justify-center font-semibold backdrop-blur-md bg-white/50 rounded rounded-l-none text-cyan-950 text-sm">{p.name}</div>
                 </div>                
               </div>
               <div className="absolute inset-x-0 lg:bottom-0 bottom-20 h-full lg:h-fit translate-y-full lg:group-hover:translate-y-0 transition-all duration-500 backdrop-blur-md bg-white/20 p-4">            

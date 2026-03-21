@@ -88,8 +88,7 @@ export default function CompaniesGrid(){
               <div className={`absolute z-10 top-2 left-2 h-9 w-9 border-2 ${c.bgColor} rounded-full flex items-center justify-center font-semibold backdrop-blur-md bg-white/80`}>{c.name.split(' ')[1]?.slice(0,2) || 'MG'}</div>
               <div className="absolute z-10 top-2 left-12 right-2 h-fit w-fit p-2 justify-center font-semibold backdrop-blur-md bg-white/60 rounded-lg text-sm text-cyan-950">{c.name}</div>
             </div>
-            <div className="absolute inset-x-0 lg:bottom-0 bottom-20 translate-y-full lg:group-hover:translate-y-0 transition-all duration-500 backdrop-blur-md bg-white/20 p-4">
-              <h3 className="text-white font-semibold">Explore More</h3>
+            <div className="absolute inset-x-0 lg:bottom-0 bottom-20 translate-y-full lg:group-hover:translate-y-0 transition-all duration-500 backdrop-blur-md bg-white/20 p-4">              
               <p className="text-white border border-white text-sm shadow-xl animate-pulse p-1 rounded hover:cursor-pointer w-fit" onClick={() => handleCardClick(c.id)}>Learn More →</p>
             </div>
           </div>
