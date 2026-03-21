@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 export default function ScrollingWave() {
   const router = useRouter()
   return (
-    <div className="relative w-full h-64 overflow-hidden bg-transparent hidden lg:block">      
+    <div className="relative w-full h-64 overflow-hidden z-10 bg-transparent hidden lg:block">      
       <svg
         viewBox="0 0 1440 320"
         preserveAspectRatio="none"

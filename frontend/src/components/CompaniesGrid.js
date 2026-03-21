@@ -5,10 +5,10 @@ import { useRouter } from 'next/router';
 
 export default function CompaniesGrid(){
   const companies = [
-    {id: 'geo', name: 'Majosa Geotechnical Investment Ltd', desc: 'We provide responsible, efficient, and sustainable mining operations that unlock the full potential of Africa’s natural resources.', img: "28d7e9a1-c9ef-4340-8610-6db1b7f9fdd9_wy13q1", features: [ "Exploration", "Mining", "Borehole Drilling", "Geotechnical Engineering", "Geotechnical Survey & Consulting", "Mineral Export"], collage: ["a358022c-5196-42c8-8f63-e0a62f4b0b82_i7lq9q", "1842d7b7-1a75-448d-813a-f1dd34efd303_r9u7vh", "2baa2ca0-75f0-48fd-926a-6ae1696a562e_x6dwh8", "32a9896f-37cb-4d98-be47-9fcfa4895826_yf3aye", "49cf8411-d96f-4cc3-9e76-59aba141e706_vzprlc"], bgColor: "bg-slate-600" },
-    {id: 'agro', name: 'Majosa Agrochemical Limited', desc: 'Driving food security through modern agriculture and rice processing. Our 24-ton-per-day rice mill supports Nigeria’s agricultural value chain, while our fertilizer and agrochemical services empower farmers nationwide.', img: "d0d2e546-da2c-473b-b2c3-228b659b153c_yoah5j", features: [ "Rice Farming & Processing", "Fertilizer & Agrochemical Sales", "Mechanized Farming"], collage: ["0ebe12b9-35b3-4e83-ae87-e272e6ab5ad9_bhcufs", "004f9437-c1bb-47fe-a93d-d929f4f4608b_xdkmcm", "52bffc29-3cc0-4262-89dd-29994e5364a5_rb8fmt"], bgColor: "bg-green-700" },
-    {id: 'global', name: 'Majosa Global Services Nig. Ltd', desc: 'We build infrastructure and deliver engineering excellence that supports national development.', img: "f9018f9c-ac22-470c-8aff-0ff288defde1_ywmdeu", features: [ "Civil & Structural Construction", "Real Estate Development", "Oil & Gas Support Services", "General Contracting"], collage: ["b0c7eaeb-fd62-4aea-ab8e-93ca6bf60f5a_ufxi3n", "145632f1-0d8e-4f69-8ed1-47a45d55d943_nezrsa", "3e317122-a42f-4331-8301-6e602ba90ce6_tetzjf", "ba1a4047-07a9-4a00-81a9-fa57826f65b0_gkuoiw"], bgColor: "bg-orange-500"},
-    {id: 'enterprise', name: 'Majosa Enterprise', desc: 'Your neighborhood supermarket and retail hub offering quality products at affordable prices.', img: "0b6f32ef-3f41-4996-b1d7-0d90d3273968_djtgri", features: ["Retail Supermarket", "General Merchandise & Distribution"], collage:["supermarket-4052658_1280_fuvhgf", "9853f9c0-8bc5-4c62-8054-03aaa4ef6257_f9nomh"], bgColor: "bg-lime-300"}
+    {id: 'geo', name: 'Majosa Geotechnical Investment Ltd', desc: 'We provide responsible, efficient, and sustainable mining operations that unlock the full potential of Africa’s natural resources.', img: "28d7e9a1-c9ef-4340-8610-6db1b7f9fdd9_wy13q1", features: [ "Exploration", "Mining", "Borehole Drilling", "Geotechnical Engineering", "Geotechnical Survey & Consulting", "Mineral Export"], collage: ["a358022c-5196-42c8-8f63-e0a62f4b0b82_i7lq9q", "1842d7b7-1a75-448d-813a-f1dd34efd303_r9u7vh", "2baa2ca0-75f0-48fd-926a-6ae1696a562e_x6dwh8", "32a9896f-37cb-4d98-be47-9fcfa4895826_yf3aye", "49cf8411-d96f-4cc3-9e76-59aba141e706_vzprlc"], bgColor: "border-orange-700" },
+    {id: 'agro', name: 'Majosa Agrochemical Ltd', desc: 'Driving food security through modern agriculture and rice processing. Our 24-ton-per-day rice mill supports Nigeria’s agricultural value chain, while our fertilizer and agrochemical services empower farmers nationwide.', img: "d0d2e546-da2c-473b-b2c3-228b659b153c_yoah5j", features: [ "Rice Farming & Processing", "Fertilizer & Agrochemical Sales", "Mechanized Farming"], collage: ["0ebe12b9-35b3-4e83-ae87-e272e6ab5ad9_bhcufs", "004f9437-c1bb-47fe-a93d-d929f4f4608b_xdkmcm", "52bffc29-3cc0-4262-89dd-29994e5364a5_rb8fmt"], bgColor: "border-green-700" },
+    {id: 'global', name: 'Majosa Global Services Nig. Ltd', desc: 'We build infrastructure and deliver engineering excellence that supports national development.', img: "f9018f9c-ac22-470c-8aff-0ff288defde1_ywmdeu", features: [ "Civil & Structural Construction", "Real Estate Development", "Oil & Gas Support Services", "General Contracting"], collage: ["b0c7eaeb-fd62-4aea-ab8e-93ca6bf60f5a_ufxi3n", "145632f1-0d8e-4f69-8ed1-47a45d55d943_nezrsa", "3e317122-a42f-4331-8301-6e602ba90ce6_tetzjf", "ba1a4047-07a9-4a00-81a9-fa57826f65b0_gkuoiw"], bgColor: "border-blue-700"},
+    {id: 'enterprise', name: 'Majosa Enterprise', desc: 'Your neighborhood supermarket and retail hub offering quality products at affordable prices.', img: "0b6f32ef-3f41-4996-b1d7-0d90d3273968_djtgri", features: ["Retail Supermarket", "General Merchandise & Distribution"], collage:["supermarket-4052658_1280_fuvhgf", "9853f9c0-8bc5-4c62-8054-03aaa4ef6257_f9nomh"], bgColor: "border-lime-700"}
   ]
 
   const [selectedId, setSelectedId] = useState(null);
@@ -76,8 +76,8 @@ export default function CompaniesGrid(){
     {selectedId === null ? (
       <section id="companies" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {companies.map(c => (
-          <div key={c.id} className={`group relative border overflow-hidden rounded-2xl shadow shadow-black`}>
-            <div className='h-64 w-full'>
+          <div key={c.id} className={`group relative border overflow-hidden rounded-2xl shadow shadow-black ${c.bgColor} border-5 shadow-lg`}>
+            <div className={`h-64 w-full`}>              
               <CldImage
                 src={c.img}
                 fill
@@ -85,8 +85,8 @@ export default function CompaniesGrid(){
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
                 alt='Picture not found'
               />
-              <div className={`absolute z-10 top-2 left-2 h-12 w-12 ${c.bgColor} rounded flex items-center justify-center font-semibold text-white`}>{c.name.split(' ')[1]?.slice(0,2) || 'MG'}</div>
-              <div className="absolute z-10 top-20 left-10 right-5 h-fit w-fit p-2 justify-center font-semibold backdrop-blur-md bg-black/20 rounded text-white">{c.name}</div>
+              <div className={`absolute z-10 top-2 left-2 h-9 w-9 border-2 ${c.bgColor} rounded-full flex items-center justify-center font-semibold backdrop-blur-md bg-white/80`}>{c.name.split(' ')[1]?.slice(0,2) || 'MG'}</div>
+              <div className="absolute z-10 top-2 left-12 right-2 h-fit w-fit p-2 justify-center font-semibold backdrop-blur-md bg-white/60 rounded-lg text-sm text-cyan-950">{c.name}</div>
             </div>
             <div className="absolute inset-x-0 lg:bottom-0 bottom-20 translate-y-full lg:group-hover:translate-y-0 transition-all duration-500 backdrop-blur-md bg-white/20 p-4">
               <h3 className="text-white font-semibold">Explore More</h3>
