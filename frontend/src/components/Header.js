@@ -39,14 +39,26 @@ export default function Header() {
         
       </div>
       {headerDropDown && (
-        <div className={`fixed lg:hidden right-0 left-0 top-20 z-30 ${router.pathname === "/product" ? "bg-indigo-500" : router.pathname === "/companies" ? "bg-yellow-600" : "bg-linear-to-br from-cyan-900 to-blue-100"}  bottom-0 p-10 border inset-0`}>
-          <nav className="space-y-6 text-white text-sm relative flex flex-col" onClick={toggleMenu}>
-            <Link href="/" className="smallNav max-w-full">Home</Link>
-            <Link href="/about" className="smallNav max-w-full">About</Link>
-            <Link href="/companies" className="smallNav max-w-full">Our Companies</Link>
-            <Link href="/services" className="smallNav max-w-full">Services</Link>
-            <Link href="/leadership" className="smallNav max-w-full">Leadership</Link>
-            <Link href="/contact" className="smallNav max-w-full">Contact</Link>            
+        <div className={`fixed lg:hidden right-0 left-0 top-20 z-30 ${router.pathname === "/product" ? "bg-indigo-500" : router.pathname === "/services" ? "bg-gray-950" : router.pathname === "/companies" ? "bg-yellow-600" : "bg-linear-to-br from-cyan-900 to-blue-100"}  bottom-0 p-10 border inset-0`}>
+          <nav className="space-y-6 text-white md:h-[70vh] overflow-y-auto text-sm relative flex flex-col">{/*onClick={toggleMenu}*/}
+            <div className="max-w-full">
+              <Link className="smallNav w-fit" href="/" onClick={toggleMenu}>Home</Link>
+            </div>
+            <div className="max-w-full">
+              <Link className="smallNav w-fit" href="/about" onClick={toggleMenu}>About</Link>
+            </div>
+            <div className="max-w-full">
+              <Link className="smallNav w-fit" href="/companies" onClick={toggleMenu}>Our Companies</Link>
+            </div>
+            <div className="max-w-full">
+              <Link className="smallNav w-fit" href="/services" onClick={toggleMenu}>Services</Link>
+            </div>
+            <div className="max-w-full">
+              <Link className="smallNav w-fit" href="/leadership" onClick={toggleMenu}>Leadership</Link>
+            </div>
+            <div className="max-w-full">
+              <Link className="smallNav w-fit" href="/contact" onClick={toggleMenu}>Contact</Link>            
+            </div>
             <Link href="/product" className="hover:underline flex items-center"><p className='text-sm'>Shop</p> <IoStorefront className={`${router.pathname != "/" ? "text-white" : ""} text-cyan-900 text-lg`} /></Link>
           </nav>   
         </div>

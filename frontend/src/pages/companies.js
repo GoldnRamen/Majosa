@@ -4,7 +4,7 @@ import CompaniesGrid from '../components/CompaniesGrid'
 
 export default function Companies(){
   return (
-    <div className="mt-15 min-h-screen bg-linear-to-br from-cyan-50 to-white flex flex-col">
+    <div className="mt-15 min-h-screen bg-linear-to-br from-orange-100 to-orange-50 flex flex-col">
       <Header />
       <main className="flex-1 max-w-full lg:mx-20 px-6 py-12 space-y-8 text-cyan-950">
         <h1 className="text-3xl font-bold">Our Companies</h1>
